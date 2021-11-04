@@ -44,6 +44,9 @@
 		FA3978832732C8B0005B9747 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3978822732C8B0005B9747 /* SceneDelegate.swift */; };
 		FA39788A2732C8B0005B9747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3978892732C8B0005B9747 /* Assets.xcassets */; };
 		FA39788D2732C8B0005B9747 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA39788B2732C8B0005B9747 /* LaunchScreen.storyboard */; };
+		FA811CD727342885000553A5 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA811CD627342885000553A5 /* UITableViewExtension.swift */; };
+		FAE00766273428E9000DEE89 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE00764273428E9000DEE89 /* ListTableViewCell.swift */; };
+		FAE00767273428E9000DEE89 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE00765273428E9000DEE89 /* ListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,9 @@
 		FA3978892732C8B0005B9747 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA39788C2732C8B0005B9747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA39788E2732C8B0005B9747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA811CD627342885000553A5 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		FAE00764273428E9000DEE89 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		FAE00765273428E9000DEE89 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		FCFC1DBAF30ABF5A0A5A6FAD /* AddScreenAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenAssembly.swift; sourceTree = "<group>"; };
 		FF6B3F09164A94657B5B5B55 /* DetailScreenRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenRouterInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +191,7 @@
 		A043C6D8A9019151A11CAA7D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FAE00763273428D4000DEE89 /* Cell */,
 				0E73CD46F254F7CE6E40BC21 /* ListScreenViewInput.swift */,
 				2A0539407D41199906337AC5 /* ListScreenViewController.swift */,
 			);
@@ -283,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3978942732C9AA005B9747 /* App */,
+				FA811CD52734285C000553A5 /* Extensions */,
 				FA811CD427341693000553A5 /* Modules */,
 				FA3978892732C8B0005B9747 /* Assets.xcassets */,
 				FA39788E2732C8B0005B9747 /* Info.plist */,
@@ -308,6 +316,23 @@
 				E35352B7D64BF1CC06FBB5C3 /* DetailScreen */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		FA811CD52734285C000553A5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA811CD627342885000553A5 /* UITableViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAE00763273428D4000DEE89 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FAE00764273428E9000DEE89 /* ListTableViewCell.swift */,
+				FAE00765273428E9000DEE89 /* ListTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		FF9D497E2CA9CC188879AF76 /* Wireframe */ = {
@@ -380,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA39788D2732C8B0005B9747 /* LaunchScreen.storyboard in Resources */,
+				FAE00767273428E9000DEE89 /* ListTableViewCell.xib in Resources */,
 				FA39788A2732C8B0005B9747 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +439,7 @@
 			files = (
 				FA3978812732C8B0005B9747 /* AppDelegate.swift in Sources */,
 				FA3978832732C8B0005B9747 /* SceneDelegate.swift in Sources */,
+				FAE00766273428E9000DEE89 /* ListTableViewCell.swift in Sources */,
 				40E5E2CC4A9FB94A4A8CA598 /* ListScreenAssembly.swift in Sources */,
 				A74C11EEFD823A814BBF910C /* ListScreenRouterInput.swift in Sources */,
 				EB910FA42C47778002112FE8 /* ListScreenRouter.swift in Sources */,
@@ -426,6 +453,7 @@
 				2514001476740859B6315426 /* ListScreenViewController.swift in Sources */,
 				5E3FC7E970499218E904A51C /* AddScreenAssembly.swift in Sources */,
 				73080268C4D804AC86780C41 /* AddScreenRouterInput.swift in Sources */,
+				FA811CD727342885000553A5 /* UITableViewExtension.swift in Sources */,
 				B011F67E3B0B7B7A085F5BBD /* AddScreenRouter.swift in Sources */,
 				88062EA1DD52F13C151A42B3 /* AddScreenInteractorInput.swift in Sources */,
 				E0871A0570B9F9C00F8F02FC /* AddScreenInteractor.swift in Sources */,
