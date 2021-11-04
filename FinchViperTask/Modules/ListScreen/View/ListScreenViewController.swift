@@ -21,6 +21,7 @@ final class ListScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTable()
+        setupNavigationBar()
     }
 
     // MARK: - Private Methods
@@ -38,6 +39,17 @@ final class ListScreenViewController: UIViewController {
         // Register cell
         listTableView.register(cell: ListTableViewCell.self)
         listTableView.separatorStyle = .none
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.title = "Главный экран"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                           target: self,
+                                                           action: #selector(addRow(sender:)))
+    }
+
+    @objc private func addRow(sender: UIBarButtonItem) {
+        // todo go to add screen
     }
 }
 
