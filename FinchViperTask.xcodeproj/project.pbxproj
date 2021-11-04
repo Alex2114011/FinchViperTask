@@ -7,6 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C3EED2E60DE0C232E2D5F01 /* DetailScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAFA6CC475C363DAAD08C8A /* DetailScreenViewOutput.swift */; };
+		206A85FC15FE18B21C90ED1E /* AddScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D65AC37CC2FA9C9F04FF8 /* AddScreenViewInput.swift */; };
+		2514001476740859B6315426 /* ListScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0539407D41199906337AC5 /* ListScreenViewController.swift */; };
+		255C21C259BCB0C385F1EB4B /* DetailScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89516BDB41731A7D165402C4 /* DetailScreenViewInput.swift */; };
+		30540A09950F86468C0A669B /* DetailScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B3F09164A94657B5B5B55 /* DetailScreenRouterInput.swift */; };
+		313538794A81583AED0C4A9A /* ListScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C41E7EA49C1C6C920BC03 /* ListScreenInteractorOutput.swift */; };
+		3458E89AB18C74C7B2CC929B /* DetailScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AB6AA452A138D41D530A0 /* DetailScreenRouterOutput.swift */; };
+		3B2E55CE87FD7D9AFE5387C1 /* ListScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C114E3FF9654E5A717AC7 /* ListScreenViewOutput.swift */; };
+		3B42FD2CE28B1A1A638E2F3A /* ListScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E73CD46F254F7CE6E40BC21 /* ListScreenViewInput.swift */; };
+		40E5E2CC4A9FB94A4A8CA598 /* ListScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99B7F13ED0249E8452332F2 /* ListScreenAssembly.swift */; };
+		4EF12F64AE94D757042C46DA /* DetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAEE2E996B87C6570D02309 /* DetailScreenPresenter.swift */; };
+		50C046A936705F0D74025F7D /* DetailScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3FB3C86B90B37FD28B1882 /* DetailScreenRouter.swift */; };
+		5E3FC7E970499218E904A51C /* AddScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC1DBAF30ABF5A0A5A6FAD /* AddScreenAssembly.swift */; };
+		6FE8D872DE13CE60B7DAC5B1 /* DetailScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D9BB1CD28B99245566210 /* DetailScreenAssembly.swift */; };
+		73080268C4D804AC86780C41 /* AddScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7AAA2B7B172468933A296 /* AddScreenRouterInput.swift */; };
+		862C04D41086BC38B396D5D4 /* AddScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEEB816D8F44F28C717B779 /* AddScreenInteractorOutput.swift */; };
+		88062EA1DD52F13C151A42B3 /* AddScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B28F05DB6144E634842FD1 /* AddScreenInteractorInput.swift */; };
+		89470B9FBC04D68D92215E72 /* DetailScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF985BA48748F000E81491C6 /* DetailScreenInteractorOutput.swift */; };
+		89B9D1B086CF918092325BBF /* AddScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCDABC05A8D1D046810434C /* AddScreenPresenter.swift */; };
+		8ADA4205D474272670A4967C /* ListScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FB30E4F180513B7D250EB8 /* ListScreenPresenter.swift */; };
+		90C7DA1EDDCD0321D879B373 /* DetailScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6BFC57E6974380AD456178 /* DetailScreenInteractor.swift */; };
+		98E8DAE4D54164EEB700FE31 /* ListScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB1942B67AEE6B17D23685C /* ListScreenRouterOutput.swift */; };
+		9D12CD585CDD9BD0237EA973 /* AddScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965990EDF0B6A2C0E04908EC /* AddScreenRouterOutput.swift */; };
+		A74C11EEFD823A814BBF910C /* ListScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13784C5CCC3133DCDE9BE01 /* ListScreenRouterInput.swift */; };
+		AC8EEBFEFE35F70E4EBA9B08 /* AddScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1634896E988C479D77C0A7 /* AddScreenViewController.swift */; };
+		B011F67E3B0B7B7A085F5BBD /* AddScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A65DFF826D22B7FB0E5A52B /* AddScreenRouter.swift */; };
+		B03524DE73B8C74D75B30F3C /* ListScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83E3721001D76827451ED1 /* ListScreenInteractor.swift */; };
+		B1FA1579F640B5623477B83C /* ListScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE331ECA0998131AAA51324E /* ListScreenInteractorInput.swift */; };
+		D8F9CF00E785B6328B797098 /* DetailScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458BD919E1AA3CAEE75005CC /* DetailScreenInteractorInput.swift */; };
+		E0871A0570B9F9C00F8F02FC /* AddScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CA54997DA59EB3B80B4C60 /* AddScreenInteractor.swift */; };
+		E3E4E205C4C2A153EDDCFA39 /* AddScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2FA9F342BA4EB24D644CBD /* AddScreenViewOutput.swift */; };
+		EA20D7F919B2CE3590FE1D04 /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D7A129FE0AB853A701B97 /* DetailScreenViewController.swift */; };
+		EB910FA42C47778002112FE8 /* ListScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FBDCDF575A95FA58D386FD /* ListScreenRouter.swift */; };
 		FA3978812732C8B0005B9747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3978802732C8B0005B9747 /* AppDelegate.swift */; };
 		FA3978832732C8B0005B9747 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3978822732C8B0005B9747 /* SceneDelegate.swift */; };
 		FA39788A2732C8B0005B9747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3978892732C8B0005B9747 /* Assets.xcassets */; };
@@ -14,12 +47,45 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E73CD46F254F7CE6E40BC21 /* ListScreenViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenViewInput.swift; sourceTree = "<group>"; };
+		11CA54997DA59EB3B80B4C60 /* AddScreenInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenInteractor.swift; sourceTree = "<group>"; };
+		2A0539407D41199906337AC5 /* ListScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenViewController.swift; sourceTree = "<group>"; };
+		2D8C41E7EA49C1C6C920BC03 /* ListScreenInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		33B28F05DB6144E634842FD1 /* AddScreenInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenInteractorInput.swift; sourceTree = "<group>"; };
+		3D4D65AC37CC2FA9C9F04FF8 /* AddScreenViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenViewInput.swift; sourceTree = "<group>"; };
+		458BD919E1AA3CAEE75005CC /* DetailScreenInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenInteractorInput.swift; sourceTree = "<group>"; };
+		50FB30E4F180513B7D250EB8 /* ListScreenPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenPresenter.swift; sourceTree = "<group>"; };
+		5AEEB816D8F44F28C717B779 /* AddScreenInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		6DB1942B67AEE6B17D23685C /* ListScreenRouterOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenRouterOutput.swift; sourceTree = "<group>"; };
+		6FCDABC05A8D1D046810434C /* AddScreenPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenPresenter.swift; sourceTree = "<group>"; };
+		7B3FB3C86B90B37FD28B1882 /* DetailScreenRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenRouter.swift; sourceTree = "<group>"; };
+		7C0AB6AA452A138D41D530A0 /* DetailScreenRouterOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenRouterOutput.swift; sourceTree = "<group>"; };
+		7FAEE2E996B87C6570D02309 /* DetailScreenPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenPresenter.swift; sourceTree = "<group>"; };
+		7FAFA6CC475C363DAAD08C8A /* DetailScreenViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenViewOutput.swift; sourceTree = "<group>"; };
+		89516BDB41731A7D165402C4 /* DetailScreenViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenViewInput.swift; sourceTree = "<group>"; };
+		8B83E3721001D76827451ED1 /* ListScreenInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenInteractor.swift; sourceTree = "<group>"; };
+		965990EDF0B6A2C0E04908EC /* AddScreenRouterOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenRouterOutput.swift; sourceTree = "<group>"; };
+		9A65DFF826D22B7FB0E5A52B /* AddScreenRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenRouter.swift; sourceTree = "<group>"; };
+		9E1634896E988C479D77C0A7 /* AddScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenViewController.swift; sourceTree = "<group>"; };
+		A99B7F13ED0249E8452332F2 /* ListScreenAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenAssembly.swift; sourceTree = "<group>"; };
+		AA2FA9F342BA4EB24D644CBD /* AddScreenViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenViewOutput.swift; sourceTree = "<group>"; };
+		AE331ECA0998131AAA51324E /* ListScreenInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenInteractorInput.swift; sourceTree = "<group>"; };
+		B13784C5CCC3133DCDE9BE01 /* ListScreenRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenRouterInput.swift; sourceTree = "<group>"; };
+		B68C114E3FF9654E5A717AC7 /* ListScreenViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenViewOutput.swift; sourceTree = "<group>"; };
+		BC6BFC57E6974380AD456178 /* DetailScreenInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenInteractor.swift; sourceTree = "<group>"; };
+		BF0D9BB1CD28B99245566210 /* DetailScreenAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenAssembly.swift; sourceTree = "<group>"; };
+		DEA7AAA2B7B172468933A296 /* AddScreenRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenRouterInput.swift; sourceTree = "<group>"; };
+		DF985BA48748F000E81491C6 /* DetailScreenInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		E39D7A129FE0AB853A701B97 /* DetailScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
+		F1FBDCDF575A95FA58D386FD /* ListScreenRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenRouter.swift; sourceTree = "<group>"; };
 		FA39787D2732C8B0005B9747 /* FinchViperTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinchViperTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3978802732C8B0005B9747 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA3978822732C8B0005B9747 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA3978892732C8B0005B9747 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA39788C2732C8B0005B9747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA39788E2732C8B0005B9747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCFC1DBAF30ABF5A0A5A6FAD /* AddScreenAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenAssembly.swift; sourceTree = "<group>"; };
+		FF6B3F09164A94657B5B5B55 /* DetailScreenRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenRouterInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +99,170 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0ABC6D2C0DAA3804B3C5C664 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				327409DA3B1949B4EF5F57B1 /* Outputs */,
+				6FCDABC05A8D1D046810434C /* AddScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0C9912B532E34B8FB0200D92 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D0F9C43DC027EF747CAB4E25 /* Outputs */,
+				7FAEE2E996B87C6570D02309 /* DetailScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2FE21EC3B12B19FF15155333 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AE331ECA0998131AAA51324E /* ListScreenInteractorInput.swift */,
+				8B83E3721001D76827451ED1 /* ListScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		327409DA3B1949B4EF5F57B1 /* Outputs */ = {
+			isa = PBXGroup;
+			children = (
+				5AEEB816D8F44F28C717B779 /* AddScreenInteractorOutput.swift */,
+				965990EDF0B6A2C0E04908EC /* AddScreenRouterOutput.swift */,
+				AA2FA9F342BA4EB24D644CBD /* AddScreenViewOutput.swift */,
+			);
+			path = Outputs;
+			sourceTree = "<group>";
+		};
+		39DF3ED4F47CE1D107DA7C19 /* Outputs */ = {
+			isa = PBXGroup;
+			children = (
+				2D8C41E7EA49C1C6C920BC03 /* ListScreenInteractorOutput.swift */,
+				6DB1942B67AEE6B17D23685C /* ListScreenRouterOutput.swift */,
+				B68C114E3FF9654E5A717AC7 /* ListScreenViewOutput.swift */,
+			);
+			path = Outputs;
+			sourceTree = "<group>";
+		};
+		65A575B65D8C46A036ABB0FB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				458BD919E1AA3CAEE75005CC /* DetailScreenInteractorInput.swift */,
+				BC6BFC57E6974380AD456178 /* DetailScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		75F30CCAA031781476ED9287 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				33B28F05DB6144E634842FD1 /* AddScreenInteractorInput.swift */,
+				11CA54997DA59EB3B80B4C60 /* AddScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8385CE17758E84FEA0DBB671 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D4D65AC37CC2FA9C9F04FF8 /* AddScreenViewInput.swift */,
+				9E1634896E988C479D77C0A7 /* AddScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		86D46D5361FD0D22F4DD3924 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				89516BDB41731A7D165402C4 /* DetailScreenViewInput.swift */,
+				E39D7A129FE0AB853A701B97 /* DetailScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A043C6D8A9019151A11CAA7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E73CD46F254F7CE6E40BC21 /* ListScreenViewInput.swift */,
+				2A0539407D41199906337AC5 /* ListScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF0CA1572E5DA2B16E34E7F9 /* AddScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E1D9BE768AC7349AA4D5B6E9 /* Wireframe */,
+				75F30CCAA031781476ED9287 /* Interactor */,
+				0ABC6D2C0DAA3804B3C5C664 /* Presenter */,
+				8385CE17758E84FEA0DBB671 /* View */,
+			);
+			path = AddScreen;
+			sourceTree = "<group>";
+		};
+		D0F9C43DC027EF747CAB4E25 /* Outputs */ = {
+			isa = PBXGroup;
+			children = (
+				DF985BA48748F000E81491C6 /* DetailScreenInteractorOutput.swift */,
+				7C0AB6AA452A138D41D530A0 /* DetailScreenRouterOutput.swift */,
+				7FAFA6CC475C363DAAD08C8A /* DetailScreenViewOutput.swift */,
+			);
+			path = Outputs;
+			sourceTree = "<group>";
+		};
+		D8336AAED277BE4EE9316BF1 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				A99B7F13ED0249E8452332F2 /* ListScreenAssembly.swift */,
+				B13784C5CCC3133DCDE9BE01 /* ListScreenRouterInput.swift */,
+				F1FBDCDF575A95FA58D386FD /* ListScreenRouter.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		E0E4E3AC896C1AC18445CB27 /* ListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D8336AAED277BE4EE9316BF1 /* Wireframe */,
+				2FE21EC3B12B19FF15155333 /* Interactor */,
+				F8FFBE92A46E10B3C614F1F8 /* Presenter */,
+				A043C6D8A9019151A11CAA7D /* View */,
+			);
+			path = ListScreen;
+			sourceTree = "<group>";
+		};
+		E1D9BE768AC7349AA4D5B6E9 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				FCFC1DBAF30ABF5A0A5A6FAD /* AddScreenAssembly.swift */,
+				DEA7AAA2B7B172468933A296 /* AddScreenRouterInput.swift */,
+				9A65DFF826D22B7FB0E5A52B /* AddScreenRouter.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		E35352B7D64BF1CC06FBB5C3 /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FF9D497E2CA9CC188879AF76 /* Wireframe */,
+				65A575B65D8C46A036ABB0FB /* Interactor */,
+				0C9912B532E34B8FB0200D92 /* Presenter */,
+				86D46D5361FD0D22F4DD3924 /* View */,
+			);
+			path = DetailScreen;
+			sourceTree = "<group>";
+		};
+		F8FFBE92A46E10B3C614F1F8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				39DF3ED4F47CE1D107DA7C19 /* Outputs */,
+				50FB30E4F180513B7D250EB8 /* ListScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		FA3978742732C8B0005B9747 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3978942732C9AA005B9747 /* App */,
+				FA811CD427341693000553A5 /* Modules */,
 				FA3978892732C8B0005B9747 /* Assets.xcassets */,
 				FA39788E2732C8B0005B9747 /* Info.plist */,
 			);
@@ -67,6 +298,26 @@
 				FA39788B2732C8B0005B9747 /* LaunchScreen.storyboard */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		FA811CD427341693000553A5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E0E4E3AC896C1AC18445CB27 /* ListScreen */,
+				CF0CA1572E5DA2B16E34E7F9 /* AddScreen */,
+				E35352B7D64BF1CC06FBB5C3 /* DetailScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FF9D497E2CA9CC188879AF76 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				BF0D9BB1CD28B99245566210 /* DetailScreenAssembly.swift */,
+				FF6B3F09164A94657B5B5B55 /* DetailScreenRouterInput.swift */,
+				7B3FB3C86B90B37FD28B1882 /* DetailScreenRouter.swift */,
+			);
+			path = Wireframe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +413,39 @@
 			files = (
 				FA3978812732C8B0005B9747 /* AppDelegate.swift in Sources */,
 				FA3978832732C8B0005B9747 /* SceneDelegate.swift in Sources */,
+				40E5E2CC4A9FB94A4A8CA598 /* ListScreenAssembly.swift in Sources */,
+				A74C11EEFD823A814BBF910C /* ListScreenRouterInput.swift in Sources */,
+				EB910FA42C47778002112FE8 /* ListScreenRouter.swift in Sources */,
+				B1FA1579F640B5623477B83C /* ListScreenInteractorInput.swift in Sources */,
+				B03524DE73B8C74D75B30F3C /* ListScreenInteractor.swift in Sources */,
+				313538794A81583AED0C4A9A /* ListScreenInteractorOutput.swift in Sources */,
+				98E8DAE4D54164EEB700FE31 /* ListScreenRouterOutput.swift in Sources */,
+				3B2E55CE87FD7D9AFE5387C1 /* ListScreenViewOutput.swift in Sources */,
+				8ADA4205D474272670A4967C /* ListScreenPresenter.swift in Sources */,
+				3B42FD2CE28B1A1A638E2F3A /* ListScreenViewInput.swift in Sources */,
+				2514001476740859B6315426 /* ListScreenViewController.swift in Sources */,
+				5E3FC7E970499218E904A51C /* AddScreenAssembly.swift in Sources */,
+				73080268C4D804AC86780C41 /* AddScreenRouterInput.swift in Sources */,
+				B011F67E3B0B7B7A085F5BBD /* AddScreenRouter.swift in Sources */,
+				88062EA1DD52F13C151A42B3 /* AddScreenInteractorInput.swift in Sources */,
+				E0871A0570B9F9C00F8F02FC /* AddScreenInteractor.swift in Sources */,
+				862C04D41086BC38B396D5D4 /* AddScreenInteractorOutput.swift in Sources */,
+				9D12CD585CDD9BD0237EA973 /* AddScreenRouterOutput.swift in Sources */,
+				E3E4E205C4C2A153EDDCFA39 /* AddScreenViewOutput.swift in Sources */,
+				89B9D1B086CF918092325BBF /* AddScreenPresenter.swift in Sources */,
+				206A85FC15FE18B21C90ED1E /* AddScreenViewInput.swift in Sources */,
+				AC8EEBFEFE35F70E4EBA9B08 /* AddScreenViewController.swift in Sources */,
+				6FE8D872DE13CE60B7DAC5B1 /* DetailScreenAssembly.swift in Sources */,
+				30540A09950F86468C0A669B /* DetailScreenRouterInput.swift in Sources */,
+				50C046A936705F0D74025F7D /* DetailScreenRouter.swift in Sources */,
+				D8F9CF00E785B6328B797098 /* DetailScreenInteractorInput.swift in Sources */,
+				90C7DA1EDDCD0321D879B373 /* DetailScreenInteractor.swift in Sources */,
+				89470B9FBC04D68D92215E72 /* DetailScreenInteractorOutput.swift in Sources */,
+				3458E89AB18C74C7B2CC929B /* DetailScreenRouterOutput.swift in Sources */,
+				1C3EED2E60DE0C232E2D5F01 /* DetailScreenViewOutput.swift in Sources */,
+				4EF12F64AE94D757042C46DA /* DetailScreenPresenter.swift in Sources */,
+				255C21C259BCB0C385F1EB4B /* DetailScreenViewInput.swift in Sources */,
+				EA20D7F919B2CE3590FE1D04 /* DetailScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -285,7 +569,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -307,9 +591,10 @@
 				INFOPLIST_FILE = FinchViperTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +620,10 @@
 				INFOPLIST_FILE = FinchViperTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
