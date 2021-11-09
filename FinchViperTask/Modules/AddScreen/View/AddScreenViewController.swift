@@ -16,17 +16,121 @@ final class AddScreenViewController: UIViewController {
 
     // MARK: - Private Properties
 
+    @IBOutlet private weak var noteImageView: UIImageView!
+    @IBOutlet private weak var titleTextField: UITextField!
+    @IBOutlet private weak var descriptionTextView: UITextView!
+
     // MARK: - LifeCircle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNotify()
+        descriptionTextView.delegate = self
+        setupTextView()
+        setupNavigationBar()
+        setupImageView()
     }
 
     // MARK: - Private Methods
+    private func setupNotify() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateTextView(sender:)),
+                                               name: UIResponder.keyboardDidShowNotification, object: nil)
 
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateTextView(sender:)),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc private func updateTextView(sender: Notification) {
+        let userInfo = sender.userInfo
+        let keyBoardRect = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)!.cgRectValue
+        let keyboardFrame = view.convert(keyBoardRect, to: view.window)
+
+        if sender.name == UIResponder.keyboardWillHideNotification {
+            descriptionTextView.contentInset = UIEdgeInsets.zero
+        } else {
+            descriptionTextView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+            descriptionTextView.scrollIndicatorInsets = descriptionTextView.contentInset
+        }
+        descriptionTextView.scrollRangeToVisible(descriptionTextView.selectedRange)
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        titleTextField.resignFirstResponder()
+        descriptionTextView.resignFirstResponder()
+    }
+
+    private func setupTextView() {
+        descriptionTextView.layer.borderWidth = 1
+        descriptionTextView.layer.borderColor = #colorLiteral(red: 0.9137255549, green: 0.9137255549, blue: 0.9137255549, alpha: 1)
+        descriptionTextView.layer.cornerRadius = 5
+        descriptionTextView.text = "Ввести текст заметки"
+        descriptionTextView.textColor = .lightGray
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
+                                                           target: self,
+                                                            action: #selector(saveAndGoBack(sender:)))
+        navigationItem.rightBarButtonItem?.isEnabled = false
+    }
+
+    @objc private func saveAndGoBack(sender: UIBarButtonItem) {
+
+    }
+
+    func setupImageView() {
+        noteImageView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(addImage(sender:)))
+        noteImageView.addGestureRecognizer(tapGesture)
+    }
+
+    @objc func addImage(sender: UITapGestureRecognizer) {
+        let imageVC = UIImagePickerController()
+        imageVC.sourceType = .photoLibrary
+        imageVC.delegate = self
+        imageVC.allowsEditing = true
+        present(imageVC, animated: true)
+    }
 }
 
 // MARK: - AddScreenViewInput
 extension AddScreenViewController: AddScreenViewInput {
 
+}
+
+// MARK: - UITextViewDelegate
+extension AddScreenViewController: UITextViewDelegate {
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if descriptionTextView.textColor == UIColor.lightGray {
+            descriptionTextView.text = nil
+            descriptionTextView.textColor = .black
+        }
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if descriptionTextView.text.isEmpty {
+            descriptionTextView.text = "Ввести текст заметки"
+            descriptionTextView.textColor = .lightGray
+        }
+        if titleTextField.text != nil && descriptionTextView.text != "Ввести текст заметки" {
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+    }
+}
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+extension AddScreenViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+    if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+            noteImageView.image = image
+        }
+
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
 }
