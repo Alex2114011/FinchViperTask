@@ -7,5 +7,5 @@
 //
 
 protocol AddScreenViewOutput: AnyObject {
-
+    var notes: [Note]? {get set}
 }

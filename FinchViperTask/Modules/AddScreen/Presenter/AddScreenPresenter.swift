@@ -6,6 +6,7 @@
 //  Copyright © 2021 AlexanderIvanov. All rights reserved.
 //
 
+import Foundation
 final class AddScreenPresenter {
 
     // MARK: - Public Properties
@@ -13,6 +14,7 @@ final class AddScreenPresenter {
     weak var view: AddScreenViewInput?
     var interactor: AddScreenInteractorInput?
     var router: AddScreenRouterInput?
+    var notes: [Note]?
 
 }
 

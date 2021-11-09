@@ -71,16 +71,19 @@ final class AddScreenViewController: UIViewController {
 
     private func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
-                                                           target: self,
+                                                            target: self,
                                                             action: #selector(saveAndGoBack(sender:)))
-        navigationItem.rightBarButtonItem?.isEnabled = false
     }
 
     @objc private func saveAndGoBack(sender: UIBarButtonItem) {
-
+        if titleTextField.text != "" && descriptionTextView.text != "Ввести текст заметки" {
+            print("go to main")
+        } else {
+            showErrorEmtyText()
+        }
     }
 
-    func setupImageView() {
+    private func setupImageView() {
         noteImageView.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(addImage(sender:)))
         noteImageView.addGestureRecognizer(tapGesture)
@@ -92,6 +95,17 @@ final class AddScreenViewController: UIViewController {
         imageVC.delegate = self
         imageVC.allowsEditing = true
         present(imageVC, animated: true)
+    }
+
+    private func showErrorEmtyText() {
+        let alertController = UIAlertController(title: "Ошибка",
+                                                message: "Заполните все поля",
+                                                preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok",
+                                   style: .default,
+                                   handler: nil)
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -115,9 +129,6 @@ extension AddScreenViewController: UITextViewDelegate {
             descriptionTextView.text = "Ввести текст заметки"
             descriptionTextView.textColor = .lightGray
         }
-        if titleTextField.text != nil && descriptionTextView.text != "Ввести текст заметки" {
-            navigationItem.rightBarButtonItem?.isEnabled = true
-        }
     }
 }
 // MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
@@ -127,7 +138,6 @@ extension AddScreenViewController: UIImagePickerControllerDelegate, UINavigation
     if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             noteImageView.image = image
         }
-
         picker.dismiss(animated: true, completion: nil)
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

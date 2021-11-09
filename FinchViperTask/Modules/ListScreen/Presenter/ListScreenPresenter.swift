@@ -34,7 +34,4 @@ extension ListScreenPresenter: ListScreenInteractorOutput {
 
 // MARK: - ListScreenRouterOutput
 extension ListScreenPresenter: ListScreenRouterOutput {
-    func goToAddScreen() {
-//        router?.routToAddScreenModule()
-    }
 }
