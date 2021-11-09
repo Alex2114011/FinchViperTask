@@ -14,19 +14,27 @@ final class ListScreenPresenter {
     var interactor: ListScreenInteractorInput?
     var router: ListScreenRouterInput?
 
+    var notes: [Note]?
 }
 
 // MARK: - ListScreenViewOutput
 extension ListScreenPresenter: ListScreenViewOutput {
+    func addNoteScreen() {
+        router?.routToAddScreenModule()
+    }
 
 }
 
 // MARK: - ListScreenInteractorOutput
 extension ListScreenPresenter: ListScreenInteractorOutput {
-
+    func rawNotes(note: [Note]) {
+        self.notes = note
+    }
 }
 
 // MARK: - ListScreenRouterOutput
 extension ListScreenPresenter: ListScreenRouterOutput {
-
+    func goToAddScreen() {
+//        router?.routToAddScreenModule()
+    }
 }

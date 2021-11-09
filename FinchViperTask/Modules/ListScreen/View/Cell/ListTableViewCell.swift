@@ -9,14 +9,13 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak var noteImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func updateUI(width note: Note) {
+        self.noteImageView.image = UIImage(data: note.imageNote)
+        self.titleLabel.text = note.titleNote
+        self.descriptionLabel.text = note.descriptionNote
     }
 }

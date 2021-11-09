@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ListScreenInteractorOutput: AnyObject {
-
+    func rawNotes(note: [Note])
 }

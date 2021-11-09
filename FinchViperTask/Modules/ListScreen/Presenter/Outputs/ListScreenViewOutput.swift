@@ -7,5 +7,6 @@
 //
 
 protocol ListScreenViewOutput: AnyObject {
-
+    var notes: [Note]? {get set}
+    func addNoteScreen()
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ListScreenRouterInput: AnyObject {
-
+    func routToAddScreenModule()
 }

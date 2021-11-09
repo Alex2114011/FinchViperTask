@@ -15,7 +15,7 @@ final class ListScreenAssembly {
         let view = ListScreenViewController()
         let presenter = ListScreenPresenter()
         let interactor = ListScreenInteractor()
-        let router = ListScreenRouter()
+        let router = ListScreenRouter(viewController: view)
 
         interactor.presenter = presenter
 

@@ -49,7 +49,7 @@ final class ListScreenViewController: UIViewController {
     }
 
     @objc private func addRow(sender: UIBarButtonItem) {
-        // todo go to add screen
+        presenter?.addNoteScreen()
     }
 }
 
@@ -61,12 +61,18 @@ extension ListScreenViewController: ListScreenViewInput {
 // MARK: - UITableViewDataSource
 extension ListScreenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+
+        guard let notes = presenter?.notes else { return 0 }
+        return notes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.getCell(ListTableViewCell.self, indexPath)
         cell.selectionStyle = .none
+
+        guard let items = presenter?.notes else { return UITableViewCell()}
+        let item = items[indexPath.row]
+        cell.updateUI(width: item)
         return cell
     }
 }
