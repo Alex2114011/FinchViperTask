@@ -77,7 +77,8 @@ final class AddScreenViewController: UIViewController {
 
     @objc private func saveAndGoBack(sender: UIBarButtonItem) {
         if titleTextField.text != "" && descriptionTextView.text != "Ввести текст заметки" {
-            print("go to main")
+        // pass data to ListModule
+            navigationController?.popViewController(animated: true)
         } else {
             showErrorEmtyText()
         }
