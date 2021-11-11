@@ -89,7 +89,9 @@ extension ListScreenViewController: UITableViewDelegate {
                    commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // todo метод для удаления элементов
+            let index = indexPath.row
+            presenter?.deleteNote(with: index)
+            listTableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 }

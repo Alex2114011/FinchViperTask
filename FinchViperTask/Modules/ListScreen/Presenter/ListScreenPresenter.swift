@@ -18,6 +18,12 @@ final class ListScreenPresenter {
 
 // MARK: - ListScreenViewOutput
 extension ListScreenPresenter: ListScreenViewOutput {
+    func deleteNote(with index: Int) {
+        if notes != nil {
+        notes?.remove(at: index)
+        }
+    }
+
     func addNoteScreen() {
         router?.routToAddScreenModule(delegate: self)
     }

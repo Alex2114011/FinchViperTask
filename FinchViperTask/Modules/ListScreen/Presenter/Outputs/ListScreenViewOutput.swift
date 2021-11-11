@@ -9,4 +9,5 @@
 protocol ListScreenViewOutput: AnyObject {
     var notes: [Note]? {get set}
     func addNoteScreen()
+    func deleteNote(with index: Int )
 }
