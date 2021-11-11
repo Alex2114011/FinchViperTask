@@ -55,7 +55,9 @@ final class ListScreenViewController: UIViewController {
 
 // MARK: - ListScreenViewInput
 extension ListScreenViewController: ListScreenViewInput {
-
+    func reloadTableView() {
+        listTableView.reloadData()
+    }
 }
 
 // MARK: - UITableViewDataSource

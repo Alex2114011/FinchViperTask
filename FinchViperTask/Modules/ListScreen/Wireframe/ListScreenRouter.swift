@@ -21,8 +21,8 @@ final class ListScreenRouter {
 
 // MARK: - ListScreenRouterInput 
 extension ListScreenRouter: ListScreenRouterInput {
-    func routToAddScreenModule() {
-        let view = AddScreenAssembly.assembleModule()
+    func routToAddScreenModule(delegate: AddScreenDelegateProtocol?) {
+        let view = AddScreenAssembly.assembleModule(delegate: delegate)
         viewController.navigationController?.pushViewController(view, animated: true)
     }
 }

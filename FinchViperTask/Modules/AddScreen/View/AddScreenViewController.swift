@@ -76,8 +76,14 @@ final class AddScreenViewController: UIViewController {
     }
 
     @objc private func saveAndGoBack(sender: UIBarButtonItem) {
-        if titleTextField.text != "" && descriptionTextView.text != "Ввести текст заметки" {
-        // pass data to ListModule
+        if titleTextField.text != "" &&
+            descriptionTextView.text != "Ввести текст заметки" {
+
+            guard let image = noteImageView.image else { return }
+            guard let imageData = UIImage.pngData(image)() else { return }
+            presenter?.saveNote(imageNote: imageData,
+                                titleNote: titleTextField.text!,
+                                descriptionNote: descriptionTextView.text)
             navigationController?.popViewController(animated: true)
         } else {
             showErrorEmtyText()
@@ -136,7 +142,8 @@ extension AddScreenViewController: UITextViewDelegate {
 extension AddScreenViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-    if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+    // swiftlint:disable line_length
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             noteImageView.image = image
         }
         picker.dismiss(animated: true, completion: nil)

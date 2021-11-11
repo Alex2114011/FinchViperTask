@@ -7,6 +7,11 @@
 //
 
 import Foundation
+
+protocol AddScreenDelegateProtocol: AnyObject {
+    func passNoteToList(note: Note?)
+}
+
 final class AddScreenPresenter {
 
     // MARK: - Public Properties
@@ -14,13 +19,16 @@ final class AddScreenPresenter {
     weak var view: AddScreenViewInput?
     var interactor: AddScreenInteractorInput?
     var router: AddScreenRouterInput?
-    var notes: [Note]?
+    weak var delegate: AddScreenDelegateProtocol?
 
 }
 
 // MARK: - AddScreenViewOutput
 extension AddScreenPresenter: AddScreenViewOutput {
-
+    func saveNote(imageNote: Data, titleNote: String, descriptionNote: String) {
+        let note = Note(imageNote: imageNote, titleNote: titleNote, descriptionNote: descriptionNote)
+        delegate?.passNoteToList(note: note)
+    }
 }
 
 // MARK: - AddScreenInteractorOutput

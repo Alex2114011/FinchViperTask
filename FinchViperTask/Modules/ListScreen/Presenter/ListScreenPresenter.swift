@@ -13,16 +13,14 @@ final class ListScreenPresenter {
     weak var view: ListScreenViewInput?
     var interactor: ListScreenInteractorInput?
     var router: ListScreenRouterInput?
-
-    var notes: [Note]?
+    var notes: [Note]? = []
 }
 
 // MARK: - ListScreenViewOutput
 extension ListScreenPresenter: ListScreenViewOutput {
     func addNoteScreen() {
-        router?.routToAddScreenModule()
+        router?.routToAddScreenModule(delegate: self)
     }
-
 }
 
 // MARK: - ListScreenInteractorOutput
@@ -34,4 +32,14 @@ extension ListScreenPresenter: ListScreenInteractorOutput {
 
 // MARK: - ListScreenRouterOutput
 extension ListScreenPresenter: ListScreenRouterOutput {
+
+}
+
+extension ListScreenPresenter: AddScreenDelegateProtocol {
+    func passNoteToList(note: Note?) {
+        guard let note = note else { return }
+        notes?.append(note)
+        view?.reloadTableView()
+    }
+
 }

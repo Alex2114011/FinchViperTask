@@ -10,7 +10,7 @@ import UIKit
 
 final class AddScreenAssembly {
 
-    class func assembleModule() -> UIViewController {
+    class func assembleModule(delegate: AddScreenDelegateProtocol?) -> UIViewController {
 
         let view = AddScreenViewController()
         let presenter = AddScreenPresenter()
@@ -22,6 +22,7 @@ final class AddScreenAssembly {
         presenter.interactor = interactor
         presenter.router = router
         presenter.view = view
+        presenter.delegate = delegate
 
         view.presenter = presenter
         router.presenter = presenter

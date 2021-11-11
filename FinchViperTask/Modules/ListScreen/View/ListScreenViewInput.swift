@@ -7,5 +7,5 @@
 //
 
 protocol ListScreenViewInput: AnyObject {
-
+    func reloadTableView()
 }
