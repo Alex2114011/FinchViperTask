@@ -7,5 +7,5 @@
 //
 
 protocol DetailScreenViewOutput: AnyObject {
-
+    func printerNotes()
 }

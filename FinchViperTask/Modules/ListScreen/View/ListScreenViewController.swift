@@ -94,4 +94,7 @@ extension ListScreenViewController: UITableViewDelegate {
             listTableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didTapToCell(with: Int(indexPath.row))
+    }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 final class DetailScreenAssembly {
 
-    class func assembleModule() -> UIViewController {
+    class func assembleModule(with note: Note) -> UIViewController {
 
         let view = DetailScreenViewController()
         let presenter = DetailScreenPresenter()
@@ -22,6 +22,7 @@ final class DetailScreenAssembly {
         presenter.interactor = interactor
         presenter.router = router
         presenter.view = view
+        presenter.note = note
 
         view.presenter = presenter
         router.presenter = presenter

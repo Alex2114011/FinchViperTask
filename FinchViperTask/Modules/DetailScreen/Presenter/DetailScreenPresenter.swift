@@ -13,10 +13,15 @@ final class DetailScreenPresenter {
     weak var view: DetailScreenViewInput?
     var interactor: DetailScreenInteractorInput?
     var router: DetailScreenRouterInput?
+    var note: Note?
 }
 
 // MARK: - DetailScreenViewOutput
 extension DetailScreenPresenter: DetailScreenViewOutput {
+    func printerNotes() {
+        print(note)
+    }
+
 }
 
 // MARK: - DetailScreenInteractorOutput

@@ -10,4 +10,5 @@ import Foundation
 
 protocol ListScreenRouterInput: AnyObject {
     func routToAddScreenModule(delegate: AddScreenDelegateProtocol?)
+    func routToDetailModule(with note: Note)
 }

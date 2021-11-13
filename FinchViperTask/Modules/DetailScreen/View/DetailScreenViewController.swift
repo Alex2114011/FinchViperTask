@@ -20,6 +20,7 @@ final class DetailScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.printerNotes()
     }
 
     // MARK: - Private Methods

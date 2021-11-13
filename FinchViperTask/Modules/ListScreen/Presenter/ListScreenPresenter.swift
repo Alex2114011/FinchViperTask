@@ -6,6 +6,8 @@
 //  Copyright © 2021 AlexanderIvanov. All rights reserved.
 //
 
+import Foundation
+
 final class ListScreenPresenter {
 
     // MARK: - Public Properties
@@ -18,6 +20,12 @@ final class ListScreenPresenter {
 
 // MARK: - ListScreenViewOutput
 extension ListScreenPresenter: ListScreenViewOutput {
+    func didTapToCell(with index: Int) {
+        guard let notes = notes else { return }
+        let note: Note = notes[index]
+        router?.routToDetailModule(with: note)
+    }
+
     func deleteNote(with index: Int) {
         if notes != nil {
         notes?.remove(at: index)
