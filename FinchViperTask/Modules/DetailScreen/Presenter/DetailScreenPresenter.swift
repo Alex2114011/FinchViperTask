@@ -6,6 +6,8 @@
 //  Copyright © 2021 AlexanderIvanov. All rights reserved.
 //
 
+import Foundation
+
 final class DetailScreenPresenter {
 
     // MARK: - Public Properties
@@ -18,8 +20,9 @@ final class DetailScreenPresenter {
 
 // MARK: - DetailScreenViewOutput
 extension DetailScreenPresenter: DetailScreenViewOutput {
-    func printerNotes() {
-        print(note)
+    func configureView() {
+        guard let note = note else { return }
+        view?.assignUIElements(to: note.imageNote, and: note.titleNote, and: note.descriptionNote)
     }
 
 }

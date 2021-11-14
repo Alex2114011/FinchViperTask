@@ -6,6 +6,8 @@
 //  Copyright © 2021 AlexanderIvanov. All rights reserved.
 //
 
-protocol DetailScreenViewInput: AnyObject {
+import UIKit
 
+protocol DetailScreenViewInput: AnyObject {
+    func assignUIElements(to imageData: Data, and title: String, and description: String )
 }

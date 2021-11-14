@@ -14,24 +14,27 @@ final class DetailScreenViewController: UIViewController {
 
     var presenter: DetailScreenViewOutput?
 
-    // MARK: - Private Properties
+    var rootScrollView = UIScrollView()
+    var contentView = UIView()
+    var noteImageView = UIImageView()
+    var titleLabel = UILabel()
+    var descriptionTextView = UITextView()
 
     // MARK: - LifeCircle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.printerNotes()
+        presenter?.configureView()
+        setupUI()
     }
-
-    // MARK: - Private Methods
-
-    private func drawSelf() {
-
-    }
-
 }
 
 // MARK: - DetailScreenViewInput
 extension DetailScreenViewController: DetailScreenViewInput {
-
+    func assignUIElements(to imageData: Data, and title: String, and description: String) {
+        guard let image = UIImage(data: imageData) else {return}
+        noteImageView.image = image
+        titleLabel.text = title
+        descriptionTextView.text = description
+    }
 }

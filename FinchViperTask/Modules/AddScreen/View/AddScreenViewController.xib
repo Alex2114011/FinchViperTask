@@ -57,7 +57,7 @@
                                 <constraint firstAttribute="height" constant="40" id="u8W-Ra-8Xy"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textField>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ASh-Qm-cAQ">
                             <rect key="frame" x="0.0" y="280" width="394" height="518"/>
