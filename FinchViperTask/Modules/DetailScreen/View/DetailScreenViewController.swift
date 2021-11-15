@@ -19,6 +19,8 @@ final class DetailScreenViewController: UIViewController {
     var noteImageView = UIImageView()
     var titleLabel = UILabel()
     var descriptionTextView = UITextView()
+    // MARK: - Private Properties
+    private let themeProvider = Style.DarkStyle
 
     // MARK: - LifeCircle
 
@@ -26,7 +28,26 @@ final class DetailScreenViewController: UIViewController {
         super.viewDidLoad()
         presenter?.configureView()
         setupUI()
+        setupTheme()
     }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        descriptionTextView.layer.borderColor = themeProvider.borderColor.cgColor
+        titleLabel.layer.borderColor = themeProvider.borderColor.cgColor
+
+    }
+
+    func setupTheme() {
+        view.backgroundColor = themeProvider.blackViewColor
+        rootScrollView.backgroundColor = themeProvider.blackViewColor
+        contentView.backgroundColor = themeProvider.blackViewColor
+        titleLabel.backgroundColor = themeProvider.greyViewColor
+        descriptionTextView.backgroundColor = themeProvider.greyViewColor
+        descriptionTextView.textColor = themeProvider.label
+        titleLabel.textColor = themeProvider.label
+    }
+
 }
 
 // MARK: - DetailScreenViewInput

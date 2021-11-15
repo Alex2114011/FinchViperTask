@@ -44,6 +44,7 @@
 		FA39788A2732C8B0005B9747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3978892732C8B0005B9747 /* Assets.xcassets */; };
 		FA39788D2732C8B0005B9747 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA39788B2732C8B0005B9747 /* LaunchScreen.storyboard */; };
 		FA811CD727342885000553A5 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA811CD627342885000553A5 /* UITableViewExtension.swift */; };
+		FA8B846E27426D8B0087CD74 /* ThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8B846D27426D8B0087CD74 /* ThemeProvider.swift */; };
 		FA9B202D2737F7D2001883E2 /* AddScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B202B2737F7D2001883E2 /* AddScreenViewController.swift */; };
 		FA9B202E2737F7D2001883E2 /* AddScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9B202C2737F7D2001883E2 /* AddScreenViewController.xib */; };
 		FAA5A2BE2736668300B0874E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA5A2BD2736668300B0874E /* Note.swift */; };
@@ -90,6 +91,7 @@
 		FA39788C2732C8B0005B9747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA39788E2732C8B0005B9747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA811CD627342885000553A5 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		FA8B846D27426D8B0087CD74 /* ThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProvider.swift; sourceTree = "<group>"; };
 		FA9B202B2737F7D2001883E2 /* AddScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScreenViewController.swift; sourceTree = "<group>"; };
 		FA9B202C2737F7D2001883E2 /* AddScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddScreenViewController.xib; sourceTree = "<group>"; };
 		FAA5A2BD2736668300B0874E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -278,6 +280,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		FA050D162742ADEF00CD8B03 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FA8B846D27426D8B0087CD74 /* ThemeProvider.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		FA3978742732C8B0005B9747 = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +311,7 @@
 				FA811CD52734285C000553A5 /* Extensions */,
 				FA811CD427341693000553A5 /* Modules */,
 				FAA5A2BC273665AF00B0874E /* Entity */,
+				FA050D162742ADEF00CD8B03 /* Service */,
 				FA3978892732C8B0005B9747 /* Assets.xcassets */,
 				FA39788E2732C8B0005B9747 /* Info.plist */,
 			);
@@ -468,6 +479,7 @@
 				FA9B202D2737F7D2001883E2 /* AddScreenViewController.swift in Sources */,
 				98E8DAE4D54164EEB700FE31 /* ListScreenRouterOutput.swift in Sources */,
 				3B2E55CE87FD7D9AFE5387C1 /* ListScreenViewOutput.swift in Sources */,
+				FA8B846E27426D8B0087CD74 /* ThemeProvider.swift in Sources */,
 				8ADA4205D474272670A4967C /* ListScreenPresenter.swift in Sources */,
 				3B42FD2CE28B1A1A638E2F3A /* ListScreenViewInput.swift in Sources */,
 				2514001476740859B6315426 /* ListScreenViewController.swift in Sources */,

@@ -19,11 +19,13 @@ final class AddScreenViewController: UIViewController {
     @IBOutlet private weak var noteImageView: UIImageView!
     @IBOutlet private weak var titleTextField: UITextField!
     @IBOutlet private weak var descriptionTextView: UITextView!
+    private let themeProvider = Style.DarkStyle
 
     // MARK: - LifeCircle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTheme()
         setupNotify()
         descriptionTextView.delegate = self
         setupTextView()
@@ -31,7 +33,19 @@ final class AddScreenViewController: UIViewController {
         setupImageView()
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        descriptionTextView.layer.borderColor = themeProvider.borderColor.cgColor
+
+    }
+
     // MARK: - Private Methods
+
+    func setupTheme() {
+        titleTextField.backgroundColor = themeProvider.greyViewColor
+        descriptionTextView.backgroundColor = themeProvider.greyViewColor
+        descriptionTextView.textColor = themeProvider.placeHolderColor
+    }
     private func setupNotify() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateTextView(sender:)),
@@ -63,10 +77,9 @@ final class AddScreenViewController: UIViewController {
 
     private func setupTextView() {
         descriptionTextView.layer.borderWidth = 1
-        descriptionTextView.layer.borderColor = #colorLiteral(red: 0.9137255549, green: 0.9137255549, blue: 0.9137255549, alpha: 1)
         descriptionTextView.layer.cornerRadius = 5
         descriptionTextView.text = "Ввести текст заметки"
-        descriptionTextView.textColor = .lightGray
+        descriptionTextView.layer.borderColor = themeProvider.borderColor.cgColor
     }
 
     private func setupNavigationBar() {
@@ -125,16 +138,16 @@ extension AddScreenViewController: AddScreenViewInput {
 extension AddScreenViewController: UITextViewDelegate {
 
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if descriptionTextView.textColor == UIColor.lightGray {
+        if descriptionTextView.textColor == themeProvider.placeHolderColor {
             descriptionTextView.text = nil
-            descriptionTextView.textColor = .black
+            descriptionTextView.textColor = themeProvider.label
         }
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
         if descriptionTextView.text.isEmpty {
             descriptionTextView.text = "Ввести текст заметки"
-            descriptionTextView.textColor = .lightGray
+            descriptionTextView.textColor = themeProvider.placeHolderColor
         }
     }
 }

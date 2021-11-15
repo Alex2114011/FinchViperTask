@@ -10,7 +10,6 @@
  extension DetailScreenViewController {
 
      func setupUI() {
-         view.backgroundColor = .white
          setupScrollView()
          setupNoteImage()
          setupTitleLabel()
@@ -34,6 +33,7 @@
                                       contentView.bottomAnchor.constraint(equalTo: rootScrollView.bottomAnchor),
                                       contentView.widthAnchor.constraint(equalTo: rootScrollView.widthAnchor)])
      }
+
      func setupNoteImage() {
          noteImageView.layer.cornerRadius = 8
          noteImageView.clipsToBounds = true
@@ -55,8 +55,8 @@
      func setupTitleLabel() {
          titleLabel.numberOfLines = 0
          titleLabel.layer.borderWidth = 1
-         titleLabel.layer.borderColor = #colorLiteral(red: 0.9137255549, green: 0.9137255549, blue: 0.9137255549, alpha: 1)
          titleLabel.layer.cornerRadius = 5
+         titleLabel.clipsToBounds = true
          titleLabel.translatesAutoresizingMaskIntoConstraints = false
          contentView.addSubview(titleLabel)
 
@@ -74,7 +74,6 @@
          descriptionTextView.isSelectable = true
          descriptionTextView.font = UIFont.systemFont(ofSize: 14)
          descriptionTextView.layer.borderWidth = 1
-         descriptionTextView.layer.borderColor = #colorLiteral(red: 0.9137255549, green: 0.9137255549, blue: 0.9137255549, alpha: 1)
          descriptionTextView.layer.cornerRadius = 5
          descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
          contentView.addSubview(descriptionTextView)
@@ -88,7 +87,9 @@
                                       descriptionTextView.heightAnchor.constraint(greaterThanOrEqualToConstant: 250),
                                       descriptionTextView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)])
 
-         let height =  contentView.heightAnchor.constraint(equalTo: rootScrollView.heightAnchor, multiplier: 1)
+         let height =  contentView.heightAnchor.constraint(equalTo: rootScrollView.heightAnchor,
+                                                           multiplier: 1,
+                                                           constant: -10)
          height.priority = .defaultLow
          height.isActive = true
      }

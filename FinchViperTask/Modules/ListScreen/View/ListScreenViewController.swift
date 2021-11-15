@@ -16,6 +16,7 @@ final class ListScreenViewController: UIViewController {
 
     // MARK: - Private Properties
     private var listTableView = UITableView()
+    private let themeProvider = Style.DarkStyle
 
     // MARK: - LifeCircle
     override func viewDidLoad() {
@@ -25,6 +26,10 @@ final class ListScreenViewController: UIViewController {
     }
 
     // MARK: - Private Methods
+    func setupTheme() {
+        listTableView.backgroundColor = themeProvider.blackViewColor
+    }
+
     private func setupTable() {
         // Delegate
         listTableView.dataSource = self
