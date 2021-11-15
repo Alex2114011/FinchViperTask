@@ -46,6 +46,8 @@ final class DetailScreenViewController: UIViewController {
         descriptionTextView.backgroundColor = themeProvider.greyViewColor
         descriptionTextView.textColor = themeProvider.label
         titleLabel.textColor = themeProvider.label
+        descriptionTextView.layer.borderColor = themeProvider.borderColor.cgColor
+        titleLabel.layer.borderColor = themeProvider.borderColor.cgColor
     }
 
 }
