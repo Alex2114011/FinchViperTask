@@ -26,7 +26,7 @@ final class AddScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTheme()
-        setupNotify()
+        setKeybordNotification()
         descriptionTextView.delegate = self
         setupTextView()
         setupNavigationBar()
@@ -46,28 +46,49 @@ final class AddScreenViewController: UIViewController {
         descriptionTextView.backgroundColor = themeProvider.greyViewColor
         descriptionTextView.textColor = themeProvider.placeHolderColor
     }
-    private func setupNotify() {
+    private func setKeybordNotification() {
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateTextView(sender:)),
+                                               selector: #selector(keyboardWillShowHide(sender:)),
                                                name: UIResponder.keyboardDidShowNotification, object: nil)
 
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateTextView(sender:)),
+                                               selector: #selector(keyboardWillShowHide(sender:)),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-    @objc private func updateTextView(sender: Notification) {
+    @objc private func keyboardWillShowHide(sender: Notification) {
+
         let userInfo = sender.userInfo
         let keyBoardRect = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)!.cgRectValue
         let keyboardFrame = view.convert(keyBoardRect, to: view.window)
 
+        let bottomOfTextField = titleTextField.convert(titleTextField.bounds, to: self.view).maxY
+        let topOfKeyboard = self.view.frame.height - keyBoardRect.height
+
+        if bottomOfTextField > topOfKeyboard {
+            self.view.frame.origin.y = -noteImageView.frame.height
+        }
+
         if sender.name == UIResponder.keyboardWillHideNotification {
             descriptionTextView.contentInset = UIEdgeInsets.zero
-        } else {
-            descriptionTextView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+            self.view.frame.origin.y = 0
+
+        } else if UIWindow.isLandscape {
+            descriptionTextView.contentInset = UIEdgeInsets(top: 0,
+                                                            left: 0,
+                                                            bottom: (keyboardFrame.height - noteImageView.frame.height),
+                                                            right: 0)
             descriptionTextView.scrollIndicatorInsets = descriptionTextView.contentInset
+            descriptionTextView.scrollRangeToVisible(descriptionTextView.selectedRange)
+        } else {
+            descriptionTextView.contentInset = UIEdgeInsets(top: 0,
+                                                            left: 0,
+                                                            bottom: keyboardFrame.height,
+                                                            right: 0)
+
+            descriptionTextView.scrollIndicatorInsets = descriptionTextView.contentInset
+            descriptionTextView.scrollRangeToVisible(descriptionTextView.selectedRange)
         }
-        descriptionTextView.scrollRangeToVisible(descriptionTextView.selectedRange)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -155,7 +176,7 @@ extension AddScreenViewController: UITextViewDelegate {
 extension AddScreenViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-    // swiftlint:disable line_length
+        // swiftlint:disable line_length
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             noteImageView.image = image
         }

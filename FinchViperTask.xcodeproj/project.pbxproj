@@ -51,6 +51,7 @@
 		FACED2F127401D0000DD4844 /* DetailScreenViewUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACED2F027401D0000DD4844 /* DetailScreenViewUIExtension.swift */; };
 		FAE00766273428E9000DEE89 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE00764273428E9000DEE89 /* ListTableViewCell.swift */; };
 		FAE00767273428E9000DEE89 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE00765273428E9000DEE89 /* ListTableViewCell.xib */; };
+		FAF675FE2742FB3800F472A4 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF675FD2742FB3800F472A4 /* UIWindowExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		FACED2F027401D0000DD4844 /* DetailScreenViewUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewUIExtension.swift; sourceTree = "<group>"; };
 		FAE00764273428E9000DEE89 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		FAE00765273428E9000DEE89 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		FAF675FD2742FB3800F472A4 /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		FCFC1DBAF30ABF5A0A5A6FAD /* AddScreenAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenAssembly.swift; sourceTree = "<group>"; };
 		FF6B3F09164A94657B5B5B55 /* DetailScreenRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenRouterInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -342,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				FA811CD627342885000553A5 /* UITableViewExtension.swift */,
+				FAF675FD2742FB3800F472A4 /* UIWindowExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				FA811CD727342885000553A5 /* UITableViewExtension.swift in Sources */,
 				B011F67E3B0B7B7A085F5BBD /* AddScreenRouter.swift in Sources */,
 				88062EA1DD52F13C151A42B3 /* AddScreenInteractorInput.swift in Sources */,
+				FAF675FE2742FB3800F472A4 /* UIWindowExtension.swift in Sources */,
 				E0871A0570B9F9C00F8F02FC /* AddScreenInteractor.swift in Sources */,
 				862C04D41086BC38B396D5D4 /* AddScreenInteractorOutput.swift in Sources */,
 				9D12CD585CDD9BD0237EA973 /* AddScreenRouterOutput.swift in Sources */,
