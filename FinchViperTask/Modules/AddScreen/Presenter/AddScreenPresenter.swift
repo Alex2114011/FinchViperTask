@@ -17,7 +17,6 @@ final class AddScreenPresenter {
     // MARK: - Public Properties
 
     weak var view: AddScreenViewInput?
-    var interactor: AddScreenInteractorInput?
     var router: AddScreenRouterInput?
     weak var delegate: AddScreenDelegateProtocol?
 
@@ -37,14 +36,4 @@ extension AddScreenPresenter: AddScreenViewOutput {
         let note = Note(imageNote: imageNote, titleNote: titleNote, descriptionNote: descriptionNote)
         delegate?.passNoteToList(note: note)
     }
-}
-
-// MARK: - AddScreenInteractorOutput
-extension AddScreenPresenter: AddScreenInteractorOutput {
-
-}
-
-// MARK: - AddScreenRouterOutput
-extension AddScreenPresenter: AddScreenRouterOutput {
-
 }

@@ -10,7 +10,6 @@ final class ListScreenRouter {
 
     // MARK: - Public Properties
 
-    weak var presenter: ListScreenRouterOutput?
     weak var viewController: ListScreenViewController!
 
     init(viewController: ListScreenViewController) {

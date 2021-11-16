@@ -13,7 +13,7 @@ final class AddScreenViewController: UIViewController {
     // MARK: - Public Properties
 
     var presenter: AddScreenViewOutput?
-    
+
     // MARK: - Private Properties
 
     @IBOutlet private weak var noteImageView: UIImageView!
@@ -41,7 +41,7 @@ final class AddScreenViewController: UIViewController {
 
     // MARK: - Private Methods
 
-    func setupTheme() {
+   private func setupTheme() {
         titleTextField.backgroundColor = themeProvider.greyViewColor
         descriptionTextView.backgroundColor = themeProvider.greyViewColor
         descriptionTextView.textColor = themeProvider.placeHolderColor
@@ -137,6 +137,14 @@ final class AddScreenViewController: UIViewController {
         imageVC.allowsEditing = true
         present(imageVC, animated: true)
     }
+
+    deinit {
+        print("deinit")
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification,
+                                                  object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification,
+                                                  object: nil)
+    }
 }
 
 // MARK: - AddScreenViewInput
@@ -170,6 +178,7 @@ extension AddScreenViewController: UITextViewDelegate {
         }
     }
 }
+
 // MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 extension AddScreenViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController,

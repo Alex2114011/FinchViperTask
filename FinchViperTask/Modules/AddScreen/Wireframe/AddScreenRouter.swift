@@ -10,7 +10,6 @@ final class AddScreenRouter {
 
     // MARK: - Public Properties
 
-    weak var presenter: AddScreenRouterOutput?
     weak var viewController: AddScreenViewController!
 
     init(viewController: AddScreenViewController) {

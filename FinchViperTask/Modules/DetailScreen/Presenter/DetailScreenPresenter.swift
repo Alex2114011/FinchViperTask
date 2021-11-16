@@ -13,8 +13,6 @@ final class DetailScreenPresenter {
     // MARK: - Public Properties
 
     weak var view: DetailScreenViewInput?
-    var interactor: DetailScreenInteractorInput?
-    var router: DetailScreenRouterInput?
     var note: Note?
 }
 
@@ -24,15 +22,4 @@ extension DetailScreenPresenter: DetailScreenViewOutput {
         guard let note = note else { return }
         view?.assignUIElements(to: note.imageNote, and: note.titleNote, and: note.descriptionNote)
     }
-
-}
-
-// MARK: - DetailScreenInteractorOutput
-extension DetailScreenPresenter: DetailScreenInteractorOutput {
-
-}
-
-// MARK: - DetailScreenRouterOutput
-extension DetailScreenPresenter: DetailScreenRouterOutput {
-
 }

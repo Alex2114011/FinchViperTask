@@ -14,18 +14,13 @@ final class AddScreenAssembly {
 
         let view = AddScreenViewController()
         let presenter = AddScreenPresenter()
-        let interactor = AddScreenInteractor()
         let router = AddScreenRouter(viewController: view)
 
-        interactor.presenter = presenter
-
-        presenter.interactor = interactor
         presenter.router = router
         presenter.view = view
         presenter.delegate = delegate
 
         view.presenter = presenter
-        router.presenter = presenter
 
         return view
     }

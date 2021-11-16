@@ -13,7 +13,6 @@ final class ListScreenPresenter {
     // MARK: - Public Properties
 
     weak var view: ListScreenViewInput?
-    var interactor: ListScreenInteractorInput?
     var router: ListScreenRouterInput?
     var notes: [Note]? = []
 }
@@ -44,11 +43,7 @@ extension ListScreenPresenter: ListScreenInteractorOutput {
     }
 }
 
-// MARK: - ListScreenRouterOutput
-extension ListScreenPresenter: ListScreenRouterOutput {
-
-}
-
+// MARK: - AddScreenDelegateProtocol
 extension ListScreenPresenter: AddScreenDelegateProtocol {
     func passNoteToList(note: Note?) {
         guard let note = note else { return }

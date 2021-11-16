@@ -26,7 +26,7 @@ final class ListScreenViewController: UIViewController {
     }
 
     // MARK: - Private Methods
-    func setupTheme() {
+    private func setupTheme() {
         listTableView.backgroundColor = themeProvider.blackViewColor
     }
 
@@ -49,8 +49,8 @@ final class ListScreenViewController: UIViewController {
     private func setupNavigationBar() {
         navigationItem.title = "Главный экран"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
-                                                           target: self,
-                                                           action: #selector(addRow(sender:)))
+                                                            target: self,
+                                                            action: #selector(addRow(sender:)))
     }
 
     @objc private func addRow(sender: UIBarButtonItem) {

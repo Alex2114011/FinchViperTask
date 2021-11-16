@@ -48,7 +48,7 @@ final class DetailScreenViewController: UIViewController {
 
     // MARK: - SetupDarkTheme
 
-    func setupTheme() {
+   private func setupTheme() {
         view.backgroundColor = themeProvider.blackViewColor
         rootScrollView.backgroundColor = themeProvider.blackViewColor
         contentView.backgroundColor = themeProvider.blackViewColor
@@ -61,7 +61,6 @@ final class DetailScreenViewController: UIViewController {
     }
 
     // MARK: - SetupUI
-
     private func setupUI() {
         setupScrollView()
         setupNoteImage()
@@ -150,7 +149,6 @@ final class DetailScreenViewController: UIViewController {
 }
 
 // MARK: - DetailScreenViewInput
-
 extension DetailScreenViewController: DetailScreenViewInput {
     func assignUIElements(to imageData: Data, and title: String, and description: String) {
         guard let image = UIImage(data: imageData) else {return}

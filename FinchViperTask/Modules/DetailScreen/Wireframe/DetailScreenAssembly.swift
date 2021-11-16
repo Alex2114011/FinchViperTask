@@ -14,18 +14,11 @@ final class DetailScreenAssembly {
 
         let view = DetailScreenViewController()
         let presenter = DetailScreenPresenter()
-        let interactor = DetailScreenInteractor()
-        let router = DetailScreenRouter()
 
-        interactor.presenter = presenter
-
-        presenter.interactor = interactor
-        presenter.router = router
         presenter.view = view
         presenter.note = note
 
         view.presenter = presenter
-        router.presenter = presenter
 
         return view
     }
