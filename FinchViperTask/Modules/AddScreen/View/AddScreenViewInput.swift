@@ -7,5 +7,5 @@
 //
 
 protocol AddScreenViewInput: AnyObject {
-
+    func showErrorEmtyText()
 }

@@ -25,6 +25,10 @@ final class AddScreenPresenter {
 
 // MARK: - AddScreenViewOutput
 extension AddScreenPresenter: AddScreenViewOutput {
+    func showErrorEmtyFields() {
+        view?.showErrorEmtyText()
+    }
+
     func goToPreviosViewController() {
         router?.closeCurrentViewController()
     }

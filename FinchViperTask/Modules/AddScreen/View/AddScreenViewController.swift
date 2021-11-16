@@ -13,7 +13,7 @@ final class AddScreenViewController: UIViewController {
     // MARK: - Public Properties
 
     var presenter: AddScreenViewOutput?
-
+    
     // MARK: - Private Properties
 
     @IBOutlet private weak var noteImageView: UIImageView!
@@ -120,7 +120,7 @@ final class AddScreenViewController: UIViewController {
                                 descriptionNote: descriptionTextView.text)
             presenter?.goToPreviosViewController()
         } else {
-            showErrorEmtyText()
+            presenter?.showErrorEmtyFields()
         }
     }
 
@@ -137,8 +137,11 @@ final class AddScreenViewController: UIViewController {
         imageVC.allowsEditing = true
         present(imageVC, animated: true)
     }
+}
 
-    private func showErrorEmtyText() {
+// MARK: - AddScreenViewInput
+extension AddScreenViewController: AddScreenViewInput {
+    func showErrorEmtyText() {
         let alertController = UIAlertController(title: "Ошибка",
                                                 message: "Заполните все поля",
                                                 preferredStyle: .alert)
@@ -148,11 +151,6 @@ final class AddScreenViewController: UIViewController {
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)
     }
-}
-
-// MARK: - AddScreenViewInput
-extension AddScreenViewController: AddScreenViewInput {
-
 }
 
 // MARK: - UITextViewDelegate
