@@ -118,7 +118,7 @@ final class AddScreenViewController: UIViewController {
             presenter?.saveNote(imageNote: imageData,
                                 titleNote: titleTextField.text!,
                                 descriptionNote: descriptionTextView.text)
-            navigationController?.popViewController(animated: true)
+            presenter?.goToPreviosViewController()
         } else {
             showErrorEmtyText()
         }

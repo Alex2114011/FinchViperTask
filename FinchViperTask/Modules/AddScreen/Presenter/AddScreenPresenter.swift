@@ -25,6 +25,10 @@ final class AddScreenPresenter {
 
 // MARK: - AddScreenViewOutput
 extension AddScreenPresenter: AddScreenViewOutput {
+    func goToPreviosViewController() {
+        router?.closeCurrentViewController()
+    }
+
     func saveNote(imageNote: Data, titleNote: String, descriptionNote: String) {
         let note = Note(imageNote: imageNote, titleNote: titleNote, descriptionNote: descriptionNote)
         delegate?.passNoteToList(note: note)

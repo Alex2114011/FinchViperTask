@@ -38,7 +38,6 @@ final class DetailScreenViewController: UIViewController {
         setupTextView()
     }
 
-
     // MARK: - AppEnvirement
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -149,7 +148,6 @@ final class DetailScreenViewController: UIViewController {
         height.isActive = true
     }
 }
-
 
 // MARK: - DetailScreenViewInput
 

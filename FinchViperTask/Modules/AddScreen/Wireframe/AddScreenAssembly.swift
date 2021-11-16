@@ -15,7 +15,7 @@ final class AddScreenAssembly {
         let view = AddScreenViewController()
         let presenter = AddScreenPresenter()
         let interactor = AddScreenInteractor()
-        let router = AddScreenRouter()
+        let router = AddScreenRouter(viewController: view)
 
         interactor.presenter = presenter
 

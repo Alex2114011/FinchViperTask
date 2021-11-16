@@ -9,4 +9,5 @@ import Foundation
 
 protocol AddScreenViewOutput: AnyObject {
     func saveNote(imageNote: Data, titleNote: String, descriptionNote: String)
+    func goToPreviosViewController()
 }

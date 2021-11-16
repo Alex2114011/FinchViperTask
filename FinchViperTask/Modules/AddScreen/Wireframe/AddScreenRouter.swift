@@ -11,10 +11,18 @@ final class AddScreenRouter {
     // MARK: - Public Properties
 
     weak var presenter: AddScreenRouterOutput?
+    weak var viewController: AddScreenViewController!
+
+    init(viewController: AddScreenViewController) {
+        self.viewController = viewController
+    }
 
 }
 
 // MARK: - AddScreenRouterInput 
 extension AddScreenRouter: AddScreenRouterInput {
+    func closeCurrentViewController() {
+        viewController.navigationController?.popViewController(animated: true)
+    }
 
 }
