@@ -6,6 +6,6 @@
 //  Copyright © 2021 AlexanderIvanov. All rights reserved.
 //
 
-protocol AddScreenViewInput: AnyObject {
+ protocol AddScreenViewInput: AnyObject {
     func showErrorEmtyText()
-}
+ }

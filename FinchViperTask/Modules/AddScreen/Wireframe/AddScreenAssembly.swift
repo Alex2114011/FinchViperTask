@@ -6,9 +6,9 @@
 //  Copyright © 2021 AlexanderIvanov. All rights reserved.
 //
 
-import UIKit
+ import UIKit
 
-final class AddScreenAssembly {
+ final class AddScreenAssembly {
 
     class func assembleModule(delegate: AddScreenDelegateProtocol?) -> UIViewController {
 
@@ -25,4 +25,4 @@ final class AddScreenAssembly {
         return view
     }
 
-}
+ }

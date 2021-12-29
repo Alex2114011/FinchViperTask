@@ -23,5 +23,4 @@ final class ListScreenAssembly {
 
         return view
     }
-
 }

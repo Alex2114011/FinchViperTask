@@ -15,7 +15,6 @@ final class ListScreenRouter {
     init(viewController: ListScreenViewController) {
         self.viewController = viewController
     }
-
 }
 
 // MARK: - ListScreenRouterInput 

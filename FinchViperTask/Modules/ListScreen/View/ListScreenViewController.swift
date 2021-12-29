@@ -12,7 +12,7 @@ final class ListScreenViewController: UIViewController {
 
     // MARK: - Public Properties
 
-    var presenter: ListScreenViewOutput?
+    var presenter: ListScreenViewOutput!
 
     // MARK: - Private Properties
     private var listTableView = UITableView()
@@ -21,6 +21,7 @@ final class ListScreenViewController: UIViewController {
     // MARK: - LifeCircle
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.loadNotes()
         setupTable()
         setupNavigationBar()
     }
@@ -54,7 +55,7 @@ final class ListScreenViewController: UIViewController {
     }
 
     @objc private func addRow(sender: UIBarButtonItem) {
-        presenter?.addNoteScreen()
+        presenter.addNoteScreen()
     }
 }
 
@@ -69,7 +70,7 @@ extension ListScreenViewController: ListScreenViewInput {
 extension ListScreenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        guard let notes = presenter?.notes else { return 0 }
+        guard let notes = presenter.notes else { return 0 }
         return notes.count
     }
 
@@ -77,12 +78,13 @@ extension ListScreenViewController: UITableViewDataSource {
         let cell = tableView.getCell(ListTableViewCell.self, indexPath)
         cell.selectionStyle = .none
 
-        guard let items = presenter?.notes else { return UITableViewCell()}
+        guard let items = presenter.notes else { return UITableViewCell()}
         let item = items[indexPath.row]
         cell.updateUI(width: item)
         return cell
     }
 }
+
 // MARK: - UITableViewDelegate
 extension ListScreenViewController: UITableViewDelegate {
 
@@ -100,7 +102,7 @@ extension ListScreenViewController: UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.didTapToCell(with: Int(indexPath.row))
+        presenter.didTapToCell(with: Int(indexPath.row))
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

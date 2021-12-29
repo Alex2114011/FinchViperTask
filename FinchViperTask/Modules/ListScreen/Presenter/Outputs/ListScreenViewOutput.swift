@@ -11,4 +11,5 @@ protocol ListScreenViewOutput: AnyObject {
     func addNoteScreen()
     func didTapToCell(with index: Int)
     func deleteNote(with index: Int )
+    func loadNotes()
 }

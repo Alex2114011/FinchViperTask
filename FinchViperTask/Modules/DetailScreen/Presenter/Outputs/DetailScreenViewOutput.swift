@@ -6,6 +6,6 @@
 //  Copyright © 2021 AlexanderIvanov. All rights reserved.
 //
 
-protocol DetailScreenViewOutput: AnyObject {
+ protocol DetailScreenViewOutput: AnyObject {
     func configureView()
-}
+ }

@@ -19,7 +19,9 @@ final class DetailScreenPresenter {
 // MARK: - DetailScreenViewOutput
 extension DetailScreenPresenter: DetailScreenViewOutput {
     func configureView() {
-        guard let note = note else { return }
-        view?.assignUIElements(to: note.imageNote, and: note.titleNote, and: note.descriptionNote)
+        guard let imageNote = note?.imageNote,
+              let titleNote = note?.titleNote,
+              let descriptionNote = note?.descriptionNote else { return }
+        view?.assignUIElements(to: imageNote, and: titleNote, and: descriptionNote)
     }
 }

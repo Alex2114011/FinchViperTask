@@ -41,7 +41,7 @@ final class AddScreenViewController: UIViewController {
 
     // MARK: - Private Methods
 
-   private func setupTheme() {
+    private func setupTheme() {
         titleTextField.backgroundColor = themeProvider.greyViewColor
         descriptionTextView.backgroundColor = themeProvider.greyViewColor
         descriptionTextView.textColor = themeProvider.placeHolderColor
@@ -139,7 +139,6 @@ final class AddScreenViewController: UIViewController {
     }
 
     deinit {
-        print("deinit")
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification,
                                                   object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification,

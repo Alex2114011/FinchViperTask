@@ -17,7 +17,8 @@ class ListTableViewCell: UITableViewCell {
     private let themeProvider = ThemeProvider.DarkStyle.self
 
     func updateUI(width note: Note) {
-        self.noteImageView.image = UIImage(data: note.imageNote)
+        guard let image = note.imageNote else { return }
+        self.noteImageView.image = UIImage(data: image)
         self.titleLabel.text = note.titleNote
         self.descriptionLabel.text = note.descriptionNote
         setupTheme()

@@ -6,8 +6,8 @@
 //  Copyright © 2021 AlexanderIvanov. All rights reserved.
 //
 
-import Foundation
+ import Foundation
 
-protocol AddScreenRouterInput: AnyObject {
+ protocol AddScreenRouterInput: AnyObject {
     func closeCurrentViewController()
-}
+ }

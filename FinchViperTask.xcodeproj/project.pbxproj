@@ -11,7 +11,6 @@
 		206A85FC15FE18B21C90ED1E /* AddScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D65AC37CC2FA9C9F04FF8 /* AddScreenViewInput.swift */; };
 		2514001476740859B6315426 /* ListScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0539407D41199906337AC5 /* ListScreenViewController.swift */; };
 		255C21C259BCB0C385F1EB4B /* DetailScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89516BDB41731A7D165402C4 /* DetailScreenViewInput.swift */; };
-		313538794A81583AED0C4A9A /* ListScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C41E7EA49C1C6C920BC03 /* ListScreenInteractorOutput.swift */; };
 		3B2E55CE87FD7D9AFE5387C1 /* ListScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C114E3FF9654E5A717AC7 /* ListScreenViewOutput.swift */; };
 		3B42FD2CE28B1A1A638E2F3A /* ListScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E73CD46F254F7CE6E40BC21 /* ListScreenViewInput.swift */; };
 		40E5E2CC4A9FB94A4A8CA598 /* ListScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99B7F13ED0249E8452332F2 /* ListScreenAssembly.swift */; };
@@ -30,11 +29,14 @@
 		FA3978832732C8B0005B9747 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3978822732C8B0005B9747 /* SceneDelegate.swift */; };
 		FA39788A2732C8B0005B9747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3978892732C8B0005B9747 /* Assets.xcassets */; };
 		FA39788D2732C8B0005B9747 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA39788B2732C8B0005B9747 /* LaunchScreen.storyboard */; };
+		FA70852D2778EEEB00CF8457 /* NoteEntity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA70852B2778EEEB00CF8457 /* NoteEntity.xcdatamodeld */; };
+		FA7085302778EF8200CF8457 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70852E2778EF8200CF8457 /* Note+CoreDataClass.swift */; };
+		FA7085312778EF8200CF8457 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70852F2778EF8200CF8457 /* Note+CoreDataProperties.swift */; };
+		FA7085332778F05C00CF8457 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7085322778F05C00CF8457 /* CoreDataStack.swift */; };
 		FA811CD727342885000553A5 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA811CD627342885000553A5 /* UITableViewExtension.swift */; };
 		FA8B846E27426D8B0087CD74 /* ThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8B846D27426D8B0087CD74 /* ThemeProvider.swift */; };
 		FA9B202D2737F7D2001883E2 /* AddScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B202B2737F7D2001883E2 /* AddScreenViewController.swift */; };
 		FA9B202E2737F7D2001883E2 /* AddScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9B202C2737F7D2001883E2 /* AddScreenViewController.xib */; };
-		FAA5A2BE2736668300B0874E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA5A2BD2736668300B0874E /* Note.swift */; };
 		FAE00766273428E9000DEE89 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE00764273428E9000DEE89 /* ListTableViewCell.swift */; };
 		FAE00767273428E9000DEE89 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE00765273428E9000DEE89 /* ListTableViewCell.xib */; };
 		FAF675FE2742FB3800F472A4 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF675FD2742FB3800F472A4 /* UIWindowExtension.swift */; };
@@ -43,7 +45,6 @@
 /* Begin PBXFileReference section */
 		0E73CD46F254F7CE6E40BC21 /* ListScreenViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenViewInput.swift; sourceTree = "<group>"; };
 		2A0539407D41199906337AC5 /* ListScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenViewController.swift; sourceTree = "<group>"; };
-		2D8C41E7EA49C1C6C920BC03 /* ListScreenInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenInteractorOutput.swift; sourceTree = "<group>"; };
 		3D4D65AC37CC2FA9C9F04FF8 /* AddScreenViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenViewInput.swift; sourceTree = "<group>"; };
 		50FB30E4F180513B7D250EB8 /* ListScreenPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenPresenter.swift; sourceTree = "<group>"; };
 		6FCDABC05A8D1D046810434C /* AddScreenPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenPresenter.swift; sourceTree = "<group>"; };
@@ -65,11 +66,14 @@
 		FA3978892732C8B0005B9747 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA39788C2732C8B0005B9747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA39788E2732C8B0005B9747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA70852C2778EEEB00CF8457 /* NoteEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoteEntity.xcdatamodel; sourceTree = "<group>"; };
+		FA70852E2778EF8200CF8457 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA70852F2778EF8200CF8457 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FA7085322778F05C00CF8457 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FA811CD627342885000553A5 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		FA8B846D27426D8B0087CD74 /* ThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProvider.swift; sourceTree = "<group>"; };
 		FA9B202B2737F7D2001883E2 /* AddScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScreenViewController.swift; sourceTree = "<group>"; };
 		FA9B202C2737F7D2001883E2 /* AddScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddScreenViewController.xib; sourceTree = "<group>"; };
-		FAA5A2BD2736668300B0874E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FAE00764273428E9000DEE89 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		FAE00765273428E9000DEE89 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		FAF675FD2742FB3800F472A4 /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
@@ -116,7 +120,6 @@
 		39DF3ED4F47CE1D107DA7C19 /* Outputs */ = {
 			isa = PBXGroup;
 			children = (
-				2D8C41E7EA49C1C6C920BC03 /* ListScreenInteractorOutput.swift */,
 				B68C114E3FF9654E5A717AC7 /* ListScreenViewOutput.swift */,
 			);
 			path = Outputs;
@@ -222,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8B846D27426D8B0087CD74 /* ThemeProvider.swift */,
+				FA7085322778F05C00CF8457 /* CoreDataStack.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -288,7 +292,9 @@
 		FAA5A2BC273665AF00B0874E /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				FAA5A2BD2736668300B0874E /* Note.swift */,
+				FA70852E2778EF8200CF8457 /* Note+CoreDataClass.swift */,
+				FA70852F2778EF8200CF8457 /* Note+CoreDataProperties.swift */,
+				FA70852B2778EEEB00CF8457 /* NoteEntity.xcdatamodeld */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -404,22 +410,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA3978812732C8B0005B9747 /* AppDelegate.swift in Sources */,
+				FA7085302778EF8200CF8457 /* Note+CoreDataClass.swift in Sources */,
 				FA3978832732C8B0005B9747 /* SceneDelegate.swift in Sources */,
 				FAE00766273428E9000DEE89 /* ListTableViewCell.swift in Sources */,
+				FA7085312778EF8200CF8457 /* Note+CoreDataProperties.swift in Sources */,
 				40E5E2CC4A9FB94A4A8CA598 /* ListScreenAssembly.swift in Sources */,
 				A74C11EEFD823A814BBF910C /* ListScreenRouterInput.swift in Sources */,
 				EB910FA42C47778002112FE8 /* ListScreenRouter.swift in Sources */,
-				313538794A81583AED0C4A9A /* ListScreenInteractorOutput.swift in Sources */,
-				FAA5A2BE2736668300B0874E /* Note.swift in Sources */,
 				FA9B202D2737F7D2001883E2 /* AddScreenViewController.swift in Sources */,
 				3B2E55CE87FD7D9AFE5387C1 /* ListScreenViewOutput.swift in Sources */,
 				FA8B846E27426D8B0087CD74 /* ThemeProvider.swift in Sources */,
 				8ADA4205D474272670A4967C /* ListScreenPresenter.swift in Sources */,
 				3B42FD2CE28B1A1A638E2F3A /* ListScreenViewInput.swift in Sources */,
 				2514001476740859B6315426 /* ListScreenViewController.swift in Sources */,
+				FA7085332778F05C00CF8457 /* CoreDataStack.swift in Sources */,
 				5E3FC7E970499218E904A51C /* AddScreenAssembly.swift in Sources */,
 				73080268C4D804AC86780C41 /* AddScreenRouterInput.swift in Sources */,
 				FA811CD727342885000553A5 /* UITableViewExtension.swift in Sources */,
+				FA70852D2778EEEB00CF8457 /* NoteEntity.xcdatamodeld in Sources */,
 				B011F67E3B0B7B7A085F5BBD /* AddScreenRouter.swift in Sources */,
 				FAF675FE2742FB3800F472A4 /* UIWindowExtension.swift in Sources */,
 				E3E4E205C4C2A153EDDCFA39 /* AddScreenViewOutput.swift in Sources */,
@@ -643,6 +651,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA70852B2778EEEB00CF8457 /* NoteEntity.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA70852C2778EEEB00CF8457 /* NoteEntity.xcdatamodel */,
+			);
+			currentVersion = FA70852C2778EEEB00CF8457 /* NoteEntity.xcdatamodel */;
+			path = NoteEntity.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FA3978752732C8B0005B9747 /* Project object */;
 }

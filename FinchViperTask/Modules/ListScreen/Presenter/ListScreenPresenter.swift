@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 final class ListScreenPresenter {
 
@@ -14,11 +15,24 @@ final class ListScreenPresenter {
 
     weak var view: ListScreenViewInput?
     var router: ListScreenRouterInput?
-    var notes: [Note]? = []
+
+    var notes: [Note]?
+    lazy var coreDataStack = CoreDataStack(modelName: "NoteEntity")
 }
 
 // MARK: - ListScreenViewOutput
 extension ListScreenPresenter: ListScreenViewOutput {
+
+    func loadNotes() {
+        let noteFetch: NSFetchRequest<Note> = Note.fetchRequest()
+        
+        do {
+            notes = try coreDataStack.managedContext.fetch(noteFetch)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+
     func didTapToCell(with index: Int) {
         guard let notes = notes else { return }
         let note: Note = notes[index]
@@ -26,20 +40,16 @@ extension ListScreenPresenter: ListScreenViewOutput {
     }
 
     func deleteNote(with index: Int) {
-        if notes != nil {
+        guard let noteToRemove = notes?[index] else { return }
+
         notes?.remove(at: index)
-        }
+
+        coreDataStack.managedContext.delete(noteToRemove)
+        coreDataStack.saveContext()
     }
 
     func addNoteScreen() {
         router?.routToAddScreenModule(delegate: self)
-    }
-}
-
-// MARK: - ListScreenInteractorOutput
-extension ListScreenPresenter: ListScreenInteractorOutput {
-    func rawNotes(note: [Note]) {
-        self.notes = note
     }
 }
 
@@ -50,5 +60,4 @@ extension ListScreenPresenter: AddScreenDelegateProtocol {
         notes?.append(note)
         view?.reloadTableView()
     }
-
 }

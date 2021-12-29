@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol AddScreenDelegateProtocol: AnyObject {
     func passNoteToList(note: Note?)
@@ -19,7 +20,7 @@ final class AddScreenPresenter {
     weak var view: AddScreenViewInput?
     var router: AddScreenRouterInput?
     weak var delegate: AddScreenDelegateProtocol?
-
+    lazy var coreDataStack = CoreDataStack(modelName: "NoteEntity")
 }
 
 // MARK: - AddScreenViewOutput
@@ -33,7 +34,14 @@ extension AddScreenPresenter: AddScreenViewOutput {
     }
 
     func saveNote(imageNote: Data, titleNote: String, descriptionNote: String) {
-        let note = Note(imageNote: imageNote, titleNote: titleNote, descriptionNote: descriptionNote)
+        let note = Note(context: coreDataStack.managedContext)
+
+        note.titleNote = titleNote
+        note.descriptionNote = descriptionNote
+        note.imageNote = imageNote
+
+        coreDataStack.saveContext()
+
         delegate?.passNoteToList(note: note)
     }
 }

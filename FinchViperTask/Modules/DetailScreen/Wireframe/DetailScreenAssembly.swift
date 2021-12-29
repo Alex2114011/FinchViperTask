@@ -6,9 +6,9 @@
 //  Copyright © 2021 AlexanderIvanov. All rights reserved.
 //
 
-import UIKit
+ import UIKit
 
-final class DetailScreenAssembly {
+ final class DetailScreenAssembly {
 
     class func assembleModule(with note: Note) -> UIViewController {
 
@@ -23,4 +23,4 @@ final class DetailScreenAssembly {
         return view
     }
 
-}
+ }
