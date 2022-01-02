@@ -17,7 +17,6 @@ final class ListScreenPresenter {
     var router: ListScreenRouterInput?
 
     var notes: [Note]?
-    lazy var coreDataStack = CoreDataStack(modelName: "NoteEntity")
 }
 
 // MARK: - ListScreenViewOutput
@@ -25,9 +24,9 @@ extension ListScreenPresenter: ListScreenViewOutput {
 
     func loadNotes() {
         let noteFetch: NSFetchRequest<Note> = Note.fetchRequest()
-        
+
         do {
-            notes = try coreDataStack.managedContext.fetch(noteFetch)
+            notes = try CoreDataStack.shared.managedContext.fetch(noteFetch)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -44,8 +43,8 @@ extension ListScreenPresenter: ListScreenViewOutput {
 
         notes?.remove(at: index)
 
-        coreDataStack.managedContext.delete(noteToRemove)
-        coreDataStack.saveContext()
+        CoreDataStack.shared.managedContext.delete(noteToRemove)
+        CoreDataStack.shared.saveContext()
     }
 
     func addNoteScreen() {

@@ -20,7 +20,7 @@ final class AddScreenPresenter {
     weak var view: AddScreenViewInput?
     var router: AddScreenRouterInput?
     weak var delegate: AddScreenDelegateProtocol?
-    lazy var coreDataStack = CoreDataStack(modelName: "NoteEntity")
+//    lazy var coreDataStack = CoreDataStack(modelName: "NoteEntity")
 }
 
 // MARK: - AddScreenViewOutput
@@ -34,13 +34,13 @@ extension AddScreenPresenter: AddScreenViewOutput {
     }
 
     func saveNote(imageNote: Data, titleNote: String, descriptionNote: String) {
-        let note = Note(context: coreDataStack.managedContext)
+        let note = Note(context: CoreDataStack.shared.managedContext)
 
         note.titleNote = titleNote
         note.descriptionNote = descriptionNote
         note.imageNote = imageNote
 
-        coreDataStack.saveContext()
+        CoreDataStack.shared.saveContext()
 
         delegate?.passNoteToList(note: note)
     }
