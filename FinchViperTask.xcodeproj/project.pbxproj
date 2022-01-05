@@ -37,7 +37,7 @@
 		FA811CD727342885000553A5 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA811CD627342885000553A5 /* UITableViewExtension.swift */; };
 		FA8B846E27426D8B0087CD74 /* ThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8B846D27426D8B0087CD74 /* ThemeProvider.swift */; };
 		FA9B202D2737F7D2001883E2 /* AddScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B202B2737F7D2001883E2 /* AddScreenViewController.swift */; };
-		FA9B202E2737F7D2001883E2 /* AddScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9B202C2737F7D2001883E2 /* AddScreenViewController.xib */; };
+		FADC643F27861E4400D7D347 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC643E27861E4400D7D347 /* UIImageExtension.swift */; };
 		FAE00766273428E9000DEE89 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE00764273428E9000DEE89 /* ListTableViewCell.swift */; };
 		FAF675FE2742FB3800F472A4 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF675FD2742FB3800F472A4 /* UIWindowExtension.swift */; };
 /* End PBXBuildFile section */
@@ -75,7 +75,7 @@
 		FA811CD627342885000553A5 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		FA8B846D27426D8B0087CD74 /* ThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProvider.swift; sourceTree = "<group>"; };
 		FA9B202B2737F7D2001883E2 /* AddScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScreenViewController.swift; sourceTree = "<group>"; };
-		FA9B202C2737F7D2001883E2 /* AddScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddScreenViewController.xib; sourceTree = "<group>"; };
+		FADC643E27861E4400D7D347 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		FAE00764273428E9000DEE89 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		FAF675FD2742FB3800F472A4 /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		FCFC1DBAF30ABF5A0A5A6FAD /* AddScreenAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenAssembly.swift; sourceTree = "<group>"; };
@@ -142,7 +142,6 @@
 			children = (
 				3D4D65AC37CC2FA9C9F04FF8 /* AddScreenViewInput.swift */,
 				FA9B202B2737F7D2001883E2 /* AddScreenViewController.swift */,
-				FA9B202C2737F7D2001883E2 /* AddScreenViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,6 +306,7 @@
 			children = (
 				FA811CD627342885000553A5 /* UITableViewExtension.swift */,
 				FAF675FD2742FB3800F472A4 /* UIWindowExtension.swift */,
+				FADC643E27861E4400D7D347 /* UIImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -398,7 +398,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9B202E2737F7D2001883E2 /* AddScreenViewController.xib in Resources */,
 				FA39788D2732C8B0005B9747 /* LaunchScreen.storyboard in Resources */,
 				FA39788A2732C8B0005B9747 /* Assets.xcassets in Resources */,
 			);
@@ -493,6 +492,7 @@
 				FAF675FE2742FB3800F472A4 /* UIWindowExtension.swift in Sources */,
 				E3E4E205C4C2A153EDDCFA39 /* AddScreenViewOutput.swift in Sources */,
 				89B9D1B086CF918092325BBF /* AddScreenPresenter.swift in Sources */,
+				FADC643F27861E4400D7D347 /* UIImageExtension.swift in Sources */,
 				206A85FC15FE18B21C90ED1E /* AddScreenViewInput.swift in Sources */,
 				6FE8D872DE13CE60B7DAC5B1 /* DetailScreenAssembly.swift in Sources */,
 				1C3EED2E60DE0C232E2D5F01 /* DetailScreenViewOutput.swift in Sources */,
