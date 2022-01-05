@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SnapKit
 final class ListScreenViewController: UIViewController {
 
     // MARK: - Public Properties
@@ -37,13 +37,12 @@ final class ListScreenViewController: UIViewController {
         listTableView.delegate = self
         // SetupUI Table
         view.addSubview(listTableView)
-        listTableView.translatesAutoresizingMaskIntoConstraints = false
-        listTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        listTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        listTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        listTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        listTableView.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalToSuperview()
+        }
         // Register cell
-        listTableView.register(cell: ListTableViewCell.self)
+//        listTableView.register(cell: ListTableViewCell.self)
+        listTableView.registerCellClass(cell: ListTableViewCell.self)
         listTableView.separatorStyle = .none
     }
 

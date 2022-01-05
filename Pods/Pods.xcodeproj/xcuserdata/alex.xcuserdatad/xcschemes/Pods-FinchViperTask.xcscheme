@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FA39787C2732C8B0005B9747"
-               BuildableName = "FinchViperTask.app"
-               BlueprintName = "FinchViperTask"
-               ReferencedContainer = "container:FinchViperTask.xcodeproj">
+               BlueprintIdentifier = "708E9E8C4311B2CB7FBF74A70311506F"
+               BuildableName = "Pods_FinchViperTask.framework"
+               BlueprintName = "Pods-FinchViperTask"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FA39787C2732C8B0005B9747"
-            BuildableName = "FinchViperTask.app"
-            BlueprintName = "FinchViperTask"
-            ReferencedContainer = "container:FinchViperTask.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -57,16 +47,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FA39787C2732C8B0005B9747"
-            BuildableName = "FinchViperTask.app"
-            BlueprintName = "FinchViperTask"
-            ReferencedContainer = "container:FinchViperTask.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

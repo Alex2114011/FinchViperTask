@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C3EED2E60DE0C232E2D5F01 /* DetailScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAFA6CC475C363DAAD08C8A /* DetailScreenViewOutput.swift */; };
 		206A85FC15FE18B21C90ED1E /* AddScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D65AC37CC2FA9C9F04FF8 /* AddScreenViewInput.swift */; };
+		217A9E86A7191819A6C91DBE /* Pods_FinchViperTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD659C13218959A368CA5FB /* Pods_FinchViperTask.framework */; };
 		2514001476740859B6315426 /* ListScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0539407D41199906337AC5 /* ListScreenViewController.swift */; };
 		255C21C259BCB0C385F1EB4B /* DetailScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89516BDB41731A7D165402C4 /* DetailScreenViewInput.swift */; };
 		3B2E55CE87FD7D9AFE5387C1 /* ListScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C114E3FF9654E5A717AC7 /* ListScreenViewOutput.swift */; };
@@ -38,11 +39,11 @@
 		FA9B202D2737F7D2001883E2 /* AddScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B202B2737F7D2001883E2 /* AddScreenViewController.swift */; };
 		FA9B202E2737F7D2001883E2 /* AddScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9B202C2737F7D2001883E2 /* AddScreenViewController.xib */; };
 		FAE00766273428E9000DEE89 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE00764273428E9000DEE89 /* ListTableViewCell.swift */; };
-		FAE00767273428E9000DEE89 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE00765273428E9000DEE89 /* ListTableViewCell.xib */; };
 		FAF675FE2742FB3800F472A4 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF675FD2742FB3800F472A4 /* UIWindowExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		082D900B02A022CA7E27A977 /* Pods-FinchViperTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinchViperTask.debug.xcconfig"; path = "Target Support Files/Pods-FinchViperTask/Pods-FinchViperTask.debug.xcconfig"; sourceTree = "<group>"; };
 		0E73CD46F254F7CE6E40BC21 /* ListScreenViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenViewInput.swift; sourceTree = "<group>"; };
 		2A0539407D41199906337AC5 /* ListScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenViewController.swift; sourceTree = "<group>"; };
 		3D4D65AC37CC2FA9C9F04FF8 /* AddScreenViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenViewInput.swift; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		AA2FA9F342BA4EB24D644CBD /* AddScreenViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenViewOutput.swift; sourceTree = "<group>"; };
 		B13784C5CCC3133DCDE9BE01 /* ListScreenRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenRouterInput.swift; sourceTree = "<group>"; };
 		B68C114E3FF9654E5A717AC7 /* ListScreenViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListScreenViewOutput.swift; sourceTree = "<group>"; };
+		B86EBE944E6874D5447DC7C8 /* Pods-FinchViperTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinchViperTask.release.xcconfig"; path = "Target Support Files/Pods-FinchViperTask/Pods-FinchViperTask.release.xcconfig"; sourceTree = "<group>"; };
 		BF0D9BB1CD28B99245566210 /* DetailScreenAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenAssembly.swift; sourceTree = "<group>"; };
 		DEA7AAA2B7B172468933A296 /* AddScreenRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenRouterInput.swift; sourceTree = "<group>"; };
 		E39D7A129FE0AB853A701B97 /* DetailScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
@@ -75,9 +77,9 @@
 		FA9B202B2737F7D2001883E2 /* AddScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScreenViewController.swift; sourceTree = "<group>"; };
 		FA9B202C2737F7D2001883E2 /* AddScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddScreenViewController.xib; sourceTree = "<group>"; };
 		FAE00764273428E9000DEE89 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
-		FAE00765273428E9000DEE89 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		FAF675FD2742FB3800F472A4 /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		FCFC1DBAF30ABF5A0A5A6FAD /* AddScreenAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddScreenAssembly.swift; sourceTree = "<group>"; };
+		FDD659C13218959A368CA5FB /* Pods_FinchViperTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinchViperTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217A9E86A7191819A6C91DBE /* Pods_FinchViperTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +118,15 @@
 				AA2FA9F342BA4EB24D644CBD /* AddScreenViewOutput.swift */,
 			);
 			path = Outputs;
+			sourceTree = "<group>";
+		};
+		349A228706DC65F6DBDA6AE0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				082D900B02A022CA7E27A977 /* Pods-FinchViperTask.debug.xcconfig */,
+				B86EBE944E6874D5447DC7C8 /* Pods-FinchViperTask.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		39DF3ED4F47CE1D107DA7C19 /* Outputs */ = {
@@ -152,6 +164,14 @@
 				2A0539407D41199906337AC5 /* ListScreenViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C84E99EB8D09956CB89938E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDD659C13218959A368CA5FB /* Pods_FinchViperTask.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CF0CA1572E5DA2B16E34E7F9 /* AddScreen */ = {
@@ -235,6 +255,8 @@
 			children = (
 				FA39787F2732C8B0005B9747 /* FinchViperTask */,
 				FA39787E2732C8B0005B9747 /* Products */,
+				349A228706DC65F6DBDA6AE0 /* Pods */,
+				C84E99EB8D09956CB89938E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -303,7 +325,6 @@
 			isa = PBXGroup;
 			children = (
 				FAE00764273428E9000DEE89 /* ListTableViewCell.swift */,
-				FAE00765273428E9000DEE89 /* ListTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -323,10 +344,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA3978912732C8B0005B9747 /* Build configuration list for PBXNativeTarget "FinchViperTask" */;
 			buildPhases = (
+				41814A7E133B8B207D023A47 /* [CP] Check Pods Manifest.lock */,
 				FA3978792732C8B0005B9747 /* Sources */,
 				FA39787A2732C8B0005B9747 /* Frameworks */,
 				FA39787B2732C8B0005B9747 /* Resources */,
 				FA3978952732CA71005B9747 /* ShellScript */,
+				1FFF00930CCC78A232C71459 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,7 +400,6 @@
 			files = (
 				FA9B202E2737F7D2001883E2 /* AddScreenViewController.xib in Resources */,
 				FA39788D2732C8B0005B9747 /* LaunchScreen.storyboard in Resources */,
-				FAE00767273428E9000DEE89 /* ListTableViewCell.xib in Resources */,
 				FA39788A2732C8B0005B9747 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +407,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1FFF00930CCC78A232C71459 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinchViperTask/Pods-FinchViperTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinchViperTask/Pods-FinchViperTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinchViperTask/Pods-FinchViperTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41814A7E133B8B207D023A47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FinchViperTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FA3978952732CA71005B9747 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -573,6 +634,7 @@
 		};
 		FA3978922732C8B0005B9747 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 082D900B02A022CA7E27A977 /* Pods-FinchViperTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -602,6 +664,7 @@
 		};
 		FA3978932732C8B0005B9747 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B86EBE944E6874D5447DC7C8 /* Pods-FinchViperTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
