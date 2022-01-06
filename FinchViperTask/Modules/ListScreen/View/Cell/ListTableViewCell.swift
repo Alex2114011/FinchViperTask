@@ -34,6 +34,7 @@ class ListTableViewCell: UITableViewCell {
         }
 
         cellContentView.addSubview(noteImageView)
+        noteImageView.contentMode = .scaleAspectFit
         noteImageView.layer.cornerRadius = 8
         noteImageView.clipsToBounds = true
         noteImageView.snp.makeConstraints { make in

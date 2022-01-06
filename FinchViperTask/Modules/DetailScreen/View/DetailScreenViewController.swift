@@ -7,7 +7,7 @@
 //
 
  import UIKit
-
+ import SnapKit
  final class DetailScreenViewController: UIViewController {
 
     // MARK: - Public Properties
@@ -73,17 +73,15 @@
         contentView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(rootScrollView)
         rootScrollView.addSubview(contentView)
-        let guide = view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate([rootScrollView.topAnchor.constraint(equalTo: guide.topAnchor),
-                                     rootScrollView.leftAnchor.constraint(equalTo: guide.leftAnchor),
-                                     rootScrollView.rightAnchor.constraint(equalTo: guide.rightAnchor),
-                                     rootScrollView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
 
-                                     contentView.topAnchor.constraint(equalTo: rootScrollView.topAnchor),
-                                     contentView.leftAnchor.constraint(equalTo: rootScrollView.leftAnchor),
-                                     contentView.rightAnchor.constraint(equalTo: rootScrollView.rightAnchor),
-                                     contentView.bottomAnchor.constraint(equalTo: rootScrollView.bottomAnchor),
-                                     contentView.widthAnchor.constraint(equalTo: rootScrollView.widthAnchor)])
+        rootScrollView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+
+        contentView.snp.makeConstraints { make in
+            make.edges.equalTo(rootScrollView)
+            make.width.equalTo(rootScrollView)
+        }
     }
 
     private func setupNoteImage() {
@@ -91,17 +89,13 @@
         noteImageView.clipsToBounds = true
         guard let image = noteImageView.image else { return }
         let aspectR = image.size.width / image.size.height
-        noteImageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(noteImageView)
 
-        NSLayoutConstraint.activate([noteImageView.topAnchor.constraint(equalTo: contentView.topAnchor,
-                                                                        constant: 20),
-                                     noteImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor,
-                                                                         constant: 50),
-                                     noteImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor,
-                                                                          constant: -50),
-                                     noteImageView.heightAnchor.constraint(equalTo: noteImageView.widthAnchor,
-                                                                           multiplier: 1/aspectR)])
+        noteImageView.snp.makeConstraints { make in
+            make.top.equalTo(contentView).inset(20)
+            make.left.right.equalTo(contentView).inset(50)
+            make.height.equalTo(noteImageView.snp.width).multipliedBy(1/aspectR)
+        }
     }
 
     private func setupTitleLabel() {
@@ -109,16 +103,13 @@
         titleLabel.layer.borderWidth = 1
         titleLabel.layer.cornerRadius = 5
         titleLabel.clipsToBounds = true
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
 
-        NSLayoutConstraint.activate([titleLabel.topAnchor.constraint(equalTo: noteImageView.bottomAnchor,
-                                                                     constant: 20),
-                                     titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,
-                                                                      constant: 10),
-                                     titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor,
-                                                                       constant: -10),
-                                     titleLabel.heightAnchor.constraint(equalToConstant: 34)])
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(noteImageView.snp.bottom).offset(20)
+            make.left.rightMargin.equalTo(contentView).inset(10)
+            make.height.equalTo(34)
+        }
     }
 
     private func setupTextView() {
@@ -128,23 +119,14 @@
         descriptionTextView.font = UIFont.systemFont(ofSize: 14)
         descriptionTextView.layer.borderWidth = 1
         descriptionTextView.layer.cornerRadius = 5
-        descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(descriptionTextView)
 
-        NSLayoutConstraint.activate([descriptionTextView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
-                                                                              constant: 20),
-                                     descriptionTextView.leftAnchor.constraint(equalTo: contentView.leftAnchor,
-                                                                               constant: 10),
-                                     descriptionTextView.rightAnchor.constraint(equalTo: contentView.rightAnchor,
-                                                                                constant: -10),
-                                     descriptionTextView.heightAnchor.constraint(greaterThanOrEqualToConstant: 250),
-                                     descriptionTextView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)])
-
-        let height =  contentView.heightAnchor.constraint(equalTo: rootScrollView.heightAnchor,
-                                                          multiplier: 1,
-                                                          constant: -10)
-        height.priority = .defaultLow
-        height.isActive = true
+        descriptionTextView.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.left.right.equalTo(contentView).inset(10)
+            make.height.greaterThanOrEqualTo(250).offset(10).priority(.low)
+            make.bottom.equalTo(contentView)
+        }
     }
  }
 
