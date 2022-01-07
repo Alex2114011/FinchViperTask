@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 extension UIWindow {
     static var isLandscape: Bool {
         if #available(iOS 13.0, *) {

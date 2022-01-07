@@ -40,6 +40,7 @@ final class AddScreenViewController: UIViewController {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         descriptionTextView.layer.borderColor = themeProvider.borderColor.cgColor
+        setNoteImageConstraints()
     }
 
     // MARK: - Private Methods
@@ -52,12 +53,38 @@ final class AddScreenViewController: UIViewController {
     private func setupNoteImageView() {
         view.addSubview(noteImageView)
         noteImageView.image = UIImage(named: "NoImage")
-        noteImageView.contentMode = .scaleAspectFit
+        noteImageView.contentMode = .scaleAspectFill
+        noteImageView.layer.cornerRadius = 8
+        noteImageView.clipsToBounds = true
+        setNoteImageConstraints()
+    }
+
+    private func setNoteImageConstraints() {
+        guard let image = noteImageView.image else { return }
+        let imageHeigth = image.size.height / UIScreen.main.scale
+        var imageWidth = image.size.width / UIScreen.main.scale
+
+        if imageWidth > imageHeigth {
+            imageWidth -= 2
+        }
+
+        let aspectRatio = imageWidth/imageHeigth
+        noteImageView.snp.removeConstraints()
         noteImageView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.centerX.equalToSuperview()
-            make.width.equalTo(view.safeAreaLayoutGuide.snp.width).multipliedBy(0.9)
-            make.height.equalToSuperview().multipliedBy(0.3)
+            if UIWindow.isLandscape {
+                make.width.equalTo(view.snp.width).multipliedBy(0.15)
+                make.height.equalTo(noteImageView.snp.width).multipliedBy(1/aspectRatio)
+            } else {
+                if  imageWidth > imageHeigth {
+                    make.width.equalTo(view.snp.width).multipliedBy(0.9)
+                }
+                if imageWidth <= imageHeigth {
+                    make.width.equalTo(view.snp.width).multipliedBy(0.4)
+                }
+                make.height.equalTo(noteImageView.snp.width).multipliedBy(1/aspectRatio)
+            }
         }
     }
 
@@ -145,36 +172,36 @@ final class AddScreenViewController: UIViewController {
 
     @objc private func keyboardWillShowHide(sender: Notification) {
 
-            let userInfo = sender.userInfo
-            let keyBoardRect = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)!.cgRectValue
-            let keyboardFrame = view.convert(keyBoardRect, to: view.window)
+        let userInfo = sender.userInfo
+        let keyBoardRect = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)!.cgRectValue
+        let keyboardFrame = view.convert(keyBoardRect, to: view.window)
 
-            let bottomOfTextField = titleTextField.convert(titleTextField.bounds, to: self.view).maxY
-            let topOfKeyboard = self.view.frame.height - keyBoardRect.height
+        let bottomOfTextField = titleTextField.convert(titleTextField.bounds, to: self.view).maxY
+        let topOfKeyboard = self.view.frame.height - keyBoardRect.height
 
-            if bottomOfTextField > topOfKeyboard {
-                self.view.frame.origin.y = -noteImageView.frame.height
-            }
+        if bottomOfTextField + 30  > topOfKeyboard {
+            self.view.frame.origin.y = -noteImageView.frame.height
+        }
 
-            if UIWindow.isLandscape {
-                descriptionTextView.contentInset = UIEdgeInsets(
-                    top: 0,
-                    left: 0,
-                    bottom: (
-                        keyboardFrame.height - noteImageView.frame.height),
-                    right: 0)
-                descriptionTextView.scrollIndicatorInsets = descriptionTextView.contentInset
-                descriptionTextView.scrollRangeToVisible(descriptionTextView.selectedRange)
-            } else {
-                descriptionTextView.contentInset = UIEdgeInsets(
-                    top: 0,
-                    left: 0,
-                    bottom: keyboardFrame.height,
-                    right: 0)
+        if UIWindow.isLandscape {
+            descriptionTextView.contentInset = UIEdgeInsets(
+                top: 0,
+                left: 0,
+                bottom: (
+                    keyboardFrame.height - noteImageView.frame.height),
+                right: 0)
+            descriptionTextView.scrollIndicatorInsets = descriptionTextView.contentInset
+            descriptionTextView.scrollRangeToVisible(descriptionTextView.selectedRange)
+        } else {
+            descriptionTextView.contentInset = UIEdgeInsets(
+                top: 0,
+                left: 0,
+                bottom: keyboardFrame.height,
+                right: 0)
 
-                descriptionTextView.scrollIndicatorInsets = descriptionTextView.contentInset
-                descriptionTextView.scrollRangeToVisible(descriptionTextView.selectedRange)
-            }
+            descriptionTextView.scrollIndicatorInsets = descriptionTextView.contentInset
+            descriptionTextView.scrollRangeToVisible(descriptionTextView.selectedRange)
+        }
 
         if sender.name == UIResponder.keyboardWillHideNotification {
             descriptionTextView.contentInset = UIEdgeInsets.zero
@@ -241,7 +268,9 @@ extension AddScreenViewController: UIImagePickerControllerDelegate, UINavigation
 
         if let image = info[UIImagePickerController.InfoKey(
             rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            noteImageView.image = image.withRoundedCorners(radius: 50)
+            noteImageView.image = image
+            setNoteImageConstraints()
+
         }
         picker.dismiss(animated: true, completion: nil)
     }

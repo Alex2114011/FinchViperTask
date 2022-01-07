@@ -1,10 +1,3 @@
-//
-//  ListTableViewCell.swift
-//  FinchViperTask
-//
-//  Created by Alex on 04.11.2021.
-//
-
 import UIKit
 
 class ListTableViewCell: UITableViewCell {
@@ -34,13 +27,9 @@ class ListTableViewCell: UITableViewCell {
         }
 
         cellContentView.addSubview(noteImageView)
-        noteImageView.contentMode = .scaleAspectFit
         noteImageView.layer.cornerRadius = 8
         noteImageView.clipsToBounds = true
-        noteImageView.snp.makeConstraints { make in
-            make.top.left.bottom.equalToSuperview().inset(4)
-            make.width.equalTo(self.noteImageView.snp.height)
-        }
+        noteImageView.contentMode = .scaleAspectFit
 
         cellContentView.addSubview(titleLabel)
         titleLabel.font = UIFont.systemFont(ofSize: 18)
@@ -62,8 +51,14 @@ class ListTableViewCell: UITableViewCell {
     }
 
     func updateUI(width note: Note) {
-        guard let image = note.imageNote else { return }
-        self.noteImageView.image = UIImage(data: image)
+        guard let imageData = note.imageNote else { return }
+        noteImageView.image = UIImage(data: imageData)
+        guard let image = noteImageView.image else { return }
+        let aspectR = image.size.height/image.size.width
+        noteImageView.snp.remakeConstraints { make in
+            make.top.left.bottom.equalToSuperview().inset(4)
+            make.width.equalTo(self.noteImageView.snp.height).multipliedBy(1/aspectR)
+        }
         self.titleLabel.text = note.titleNote
         self.descriptionLabel.text = note.descriptionNote
     }
