@@ -21,6 +21,8 @@ final class AddScreenViewController: UIViewController {
     private var titleTextField = UITextField()
     private var descriptionTextView = UITextView()
     private let themeProvider = Style.DarkStyle
+    private let mainScrollView = UIScrollView(frame: .zero)
+    private let contentView = UIView()
 
     // MARK: - LifeCircle
 
@@ -47,11 +49,31 @@ final class AddScreenViewController: UIViewController {
 
     // MARK: - SetupUI
     private func setupView() {
+        view.addSubview(mainScrollView)
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundTap))
+        self.contentView.addGestureRecognizer(tapGestureRecognizer)
+
+        mainScrollView.isScrollEnabled = true
+        mainScrollView.snp.makeConstraints({ make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.left.right.equalToSuperview()
+        })
+
+        mainScrollView.addSubview(contentView)
+        contentView.snp.makeConstraints({ make in
+            make.top.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
+            make.width.equalTo(view.snp.width)
+            make.height.equalTo(getOriginalHeight()).priority(.low)
+        })
         view.backgroundColor = themeProvider.blackViewColor
+
     }
 
     private func setupNoteImageView() {
-        view.addSubview(noteImageView)
+        contentView.addSubview(noteImageView)
         noteImageView.image = UIImage(named: "NoImage")
         noteImageView.contentMode = .scaleAspectFill
         noteImageView.layer.cornerRadius = 8
@@ -62,56 +84,59 @@ final class AddScreenViewController: UIViewController {
     private func setNoteImageConstraints() {
         guard let image = noteImageView.image else { return }
         let imageHeigth = image.size.height / UIScreen.main.scale
-        var imageWidth = image.size.width / UIScreen.main.scale
-
-        if imageWidth > imageHeigth {
-            imageWidth -= 2
-        }
+        let imageWidth = image.size.width / UIScreen.main.scale
 
         let aspectRatio = imageWidth/imageHeigth
         noteImageView.snp.removeConstraints()
-        noteImageView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        noteImageView.snp.makeConstraints({ make in
+            make.top.equalToSuperview()
             make.centerX.equalToSuperview()
-            if UIWindow.isLandscape {
-                make.width.equalTo(view.snp.width).multipliedBy(0.15)
-                make.height.equalTo(noteImageView.snp.width).multipliedBy(1/aspectRatio)
-            } else {
-                if  imageWidth > imageHeigth {
-                    make.width.equalTo(view.snp.width).multipliedBy(0.9)
-                }
-                if imageWidth <= imageHeigth {
-                    make.width.equalTo(view.snp.width).multipliedBy(0.4)
-                }
-                make.height.equalTo(noteImageView.snp.width).multipliedBy(1/aspectRatio)
-            }
+            make.width.equalTo(getOriginalWidth() - 32)
+            make.height.equalTo(noteImageView.snp.width).multipliedBy(1/aspectRatio)
+        })
+    }
+
+    private func getOriginalWidth() -> CGFloat {
+        if UIScreen.main.bounds.width > UIScreen.main.bounds.height {
+            return UIScreen.main.bounds.height
+        } else {
+            return UIScreen.main.bounds.width
+        }
+    }
+
+    private func getOriginalHeight() -> CGFloat {
+        if UIScreen.main.bounds.width < UIScreen.main.bounds.height {
+            return UIScreen.main.bounds.height
+        } else {
+            return UIScreen.main.bounds.width
         }
     }
 
     private func setupTitleTF() {
-        view.addSubview(titleTextField)
+        contentView.addSubview(titleTextField)
         titleTextField.font = UIFont.systemFont(ofSize: 14)
         titleTextField.borderStyle = .roundedRect
         titleTextField.layer.borderColor = themeProvider.borderColor.cgColor
         titleTextField.placeholder = "Ввести заголовок"
         titleTextField.snp.makeConstraints { make in
             make.top.equalTo(noteImageView.snp.bottom).offset(20)
-            make.left.right.equalTo(view.safeAreaLayoutGuide).inset(10)
+            make.left.right.equalTo(contentView.safeAreaLayoutGuide).inset(10)
             make.height.equalTo(34)
         }
     }
 
     private func setupTextView() {
-        view.addSubview(descriptionTextView)
+        contentView.addSubview(descriptionTextView)
         descriptionTextView.font = UIFont.systemFont(ofSize: 14)
         descriptionTextView.layer.borderWidth = 1
         descriptionTextView.layer.cornerRadius = 5
         descriptionTextView.text = "Ввести текст заметки"
+        descriptionTextView.isScrollEnabled = false
         descriptionTextView.layer.borderColor = themeProvider.borderColor.cgColor
         descriptionTextView.snp.makeConstraints { make in
-            make.left.right.equalTo(view.safeAreaLayoutGuide).inset(10)
+            make.left.right.equalTo(contentView.safeAreaLayoutGuide).inset(10)
             make.top.equalTo(titleTextField.snp.bottom).offset(10)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(10)
+            make.height.greaterThanOrEqualTo(250)
         }
     }
 
@@ -127,6 +152,10 @@ final class AddScreenViewController: UIViewController {
         imageVC.delegate = self
         imageVC.allowsEditing = true
         present(imageVC, animated: true)
+    }
+
+    @objc private func backgroundTap(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
 
     private func setupNavigationBar() {
@@ -174,44 +203,19 @@ final class AddScreenViewController: UIViewController {
 
         let userInfo = sender.userInfo
         let keyBoardRect = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)!.cgRectValue
-        let keyboardFrame = view.convert(keyBoardRect, to: view.window)
 
-        let bottomOfTextField = titleTextField.convert(titleTextField.bounds, to: self.view).maxY
-        let topOfKeyboard = self.view.frame.height - keyBoardRect.height
-
-        if bottomOfTextField + 30  > topOfKeyboard {
-            self.view.frame.origin.y = -noteImageView.frame.height
+        switch sender.name {
+        case UIResponder.keyboardDidShowNotification:
+            let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardRect.height + 30, right: 0.0)
+            mainScrollView.contentInset = contentInsets
+            mainScrollView.scrollIndicatorInsets = contentInsets
+        case  UIResponder.keyboardWillHideNotification:
+            let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+            mainScrollView.contentInset = contentInsets
+            mainScrollView.scrollIndicatorInsets = contentInsets
+        default:
+            break
         }
-
-        if UIWindow.isLandscape {
-            descriptionTextView.contentInset = UIEdgeInsets(
-                top: 0,
-                left: 0,
-                bottom: (
-                    keyboardFrame.height - noteImageView.frame.height),
-                right: 0)
-            descriptionTextView.scrollIndicatorInsets = descriptionTextView.contentInset
-            descriptionTextView.scrollRangeToVisible(descriptionTextView.selectedRange)
-        } else {
-            descriptionTextView.contentInset = UIEdgeInsets(
-                top: 0,
-                left: 0,
-                bottom: keyboardFrame.height,
-                right: 0)
-
-            descriptionTextView.scrollIndicatorInsets = descriptionTextView.contentInset
-            descriptionTextView.scrollRangeToVisible(descriptionTextView.selectedRange)
-        }
-
-        if sender.name == UIResponder.keyboardWillHideNotification {
-            descriptionTextView.contentInset = UIEdgeInsets.zero
-            self.view.frame.origin.y = 0
-        }
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        titleTextField.resignFirstResponder()
-        descriptionTextView.resignFirstResponder()
     }
 
     deinit {
@@ -251,6 +255,9 @@ extension AddScreenViewController: UITextViewDelegate {
             descriptionTextView.text = nil
             descriptionTextView.textColor = themeProvider.label
         }
+
+        let scrollPoint: CGPoint = CGPoint.init(x: 0, y: textView.frame.origin.y/2)
+        self.mainScrollView.setContentOffset(scrollPoint, animated: true)
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -258,6 +265,8 @@ extension AddScreenViewController: UITextViewDelegate {
             descriptionTextView.text = "Ввести текст заметки"
             descriptionTextView.textColor = themeProvider.placeHolderColor
         }
+
+        self.mainScrollView.setContentOffset(CGPoint.zero, animated: true)
     }
 }
 
